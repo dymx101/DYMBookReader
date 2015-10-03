@@ -1,5 +1,5 @@
 PODS:
-  - DYMBookReader (0.1.0)
+  - DYMBookReader (0.2.0)
 
 DEPENDENCIES:
   - DYMBookReader (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  DYMBookReader: caa0364eaa5d578ed62cd57f7177fe9c1a32eac6
+  DYMBookReader: 1eb096c2ded2c3ad80473ab104f149ac5271c5aa
 
 COCOAPODS: 0.38.2

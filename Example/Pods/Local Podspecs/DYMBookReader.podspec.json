@@ -1,16 +1,16 @@
 {
   "name": "DYMBookReader",
-  "version": "0.1.0",
-  "summary": "A short description of DYMBookReader.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/DYMBookReader",
+  "version": "0.2.0",
+  "summary": "A Shiny Reader for e-book, still under development.",
+  "description": "A Shiny Reader for e-book, free to use, still under development.",
+  "homepage": "https://github.com/dymx101/DYMBookReader",
   "license": "MIT",
   "authors": {
     "Daniel Dong": "dymx101@hotmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/DYMBookReader.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/dymx101/DYMBookReader.git",
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "7.0"

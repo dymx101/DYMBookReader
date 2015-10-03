@@ -7,12 +7,16 @@
 //
 
 #import "DYMAppDelegate.h"
+#import <DYMBookReader/DYMBookReaderViewController.h>
 
 @implementation DYMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"demo" ofType:@"txt"];
+    
+    DYMBookReaderViewController *vc = (DYMBookReaderViewController *)self.window.rootViewController;
+    vc.bookURL = [NSURL URLWithString:filePath];
     return YES;
 }
 
