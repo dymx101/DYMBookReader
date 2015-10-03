@@ -1,0 +1,6 @@
+framework module DYMBookReader {
+  umbrella header "DYMBookReader-umbrella.h"
+
+  export *
+  module * { export * }
+}
