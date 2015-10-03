@@ -19,6 +19,8 @@
 		B575E74C368ABA4BA4C0F6822B3CAA60 /* Pods-DYMBookReader_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E20C7581FE06129A33AD268E15551C /* Pods-DYMBookReader_Tests-dummy.m */; };
 		C803FA9B4BD1BC4CEC409250817216EF /* DYMBookProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = F2869D32D9436FA7B690EB41015B68AE /* DYMBookProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D206D6F1510BCBCDEB396686790779D1 /* DYMBookProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED6DD122FD2EBCAA9E421FEBE5BDA9 /* DYMBookProvider.m */; };
+		EAFE480D1BC0294700388431 /* DYMBookPageDatasource.h in Headers */ = {isa = PBXBuildFile; fileRef = EAFE480B1BC0294700388431 /* DYMBookPageDatasource.h */; };
+		EAFE480E1BC0294700388431 /* DYMBookPageDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFE480C1BC0294700388431 /* DYMBookPageDatasource.m */; };
 		EB885AB114B01638712247C4B95C2C66 /* DYMBookReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2952E8AA1767FFF2AC48E26DA27A6637 /* DYMBookReaderViewController.m */; };
 		EF433628E7B699C9453DFC0D05384900 /* DYMBookReader.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B89D28478F50B76B069A63667BE96918 /* DYMBookReader.bundle */; };
 /* End PBXBuildFile section */
@@ -79,6 +81,8 @@
 		D01DBA462D6599B59FCB61210151EAEF /* Pods_DYMBookReader_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYMBookReader_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBFA8710B3277DC6BA1916ABA0F0206C /* Pods-DYMBookReader_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DYMBookReader_Example.modulemap"; sourceTree = "<group>"; };
 		E2B83190C450CC43741F10FFD3C23AB1 /* Pods-DYMBookReader_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DYMBookReader_Example-dummy.m"; sourceTree = "<group>"; };
+		EAFE480B1BC0294700388431 /* DYMBookPageDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYMBookPageDatasource.h; sourceTree = "<group>"; };
+		EAFE480C1BC0294700388431 /* DYMBookPageDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYMBookPageDatasource.m; sourceTree = "<group>"; };
 		ECD8F171FF6B5F6ECE7062E1BCE54298 /* Pods_DYMBookReader_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYMBookReader_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2869D32D9436FA7B690EB41015B68AE /* DYMBookProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DYMBookProvider.h; sourceTree = "<group>"; };
 		F40D8415F9E187F2D71657429D8C16C9 /* DYMBookReader.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DYMBookReader.xcconfig; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 				34ED6DD122FD2EBCAA9E421FEBE5BDA9 /* DYMBookProvider.m */,
 				889E7E39CA207E8784E8FDA175C92540 /* DYMBookReaderViewController.h */,
 				2952E8AA1767FFF2AC48E26DA27A6637 /* DYMBookReaderViewController.m */,
+				EAFE480B1BC0294700388431 /* DYMBookPageDatasource.h */,
+				EAFE480C1BC0294700388431 /* DYMBookPageDatasource.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -274,6 +280,7 @@
 			files = (
 				C803FA9B4BD1BC4CEC409250817216EF /* DYMBookProvider.h in Headers */,
 				7B0EFCE0A80A97043E7D6F34602D49F1 /* DYMBookReader-umbrella.h in Headers */,
+				EAFE480D1BC0294700388431 /* DYMBookPageDatasource.h in Headers */,
 				2D2E9EF6C56A11A558FD512ABD768316 /* DYMBookReaderViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +431,7 @@
 				D206D6F1510BCBCDEB396686790779D1 /* DYMBookProvider.m in Sources */,
 				9154D10042557000B1B4867643178DB7 /* DYMBookReader-dummy.m in Sources */,
 				EB885AB114B01638712247C4B95C2C66 /* DYMBookReaderViewController.m in Sources */,
+				EAFE480E1BC0294700388431 /* DYMBookPageDatasource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
