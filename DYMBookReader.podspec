@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "DYMBookReader"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.summary          = "A Shiny Reader for e-book, still under development."
 
 # This description is used to generate tags and improve search results.
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
-A Shiny Reader for e-book, free for use.
+A Shiny Reader for e-book, free to use, still under development.
                        DESC
 
   s.homepage         = "https://github.com/dymx101/DYMBookReader"
