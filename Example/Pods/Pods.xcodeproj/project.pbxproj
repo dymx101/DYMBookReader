@@ -7,170 +7,304 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D2E9EF6C56A11A558FD512ABD768316 /* DYMBookReaderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 889E7E39CA207E8784E8FDA175C92540 /* DYMBookReaderViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3037B826978CB2C35176E0B59EFDC57D /* Pods-DYMBookReader_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B83190C450CC43741F10FFD3C23AB1 /* Pods-DYMBookReader_Example-dummy.m */; };
-		3574D2358E53DDF789872F3AF3D2BE55 /* Pods-DYMBookReader_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A42BD5600396A72D8AFC5425AFCC967 /* Pods-DYMBookReader_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		50C842E22AB0E9B56168B8F6C6F0B118 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A470A17555CC8B3E3F616D2EAE75BA /* Foundation.framework */; };
-		6F89EC2DE3EBF5A025DE4BED4BA4ABEA /* Pods-DYMBookReader_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CC852EF0645A316A35DF2AE287F86F7 /* Pods-DYMBookReader_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7B0EFCE0A80A97043E7D6F34602D49F1 /* DYMBookReader-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2ABE23C2150771472639E68E1F872FAE /* DYMBookReader-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		839C9DD12C98B584803CADAF7E11910A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A470A17555CC8B3E3F616D2EAE75BA /* Foundation.framework */; };
-		9154D10042557000B1B4867643178DB7 /* DYMBookReader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894749C850C56EAF4F1FAF75C001437 /* DYMBookReader-dummy.m */; };
-		B44EE9337CC69A65019A6224E3DA7C92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A470A17555CC8B3E3F616D2EAE75BA /* Foundation.framework */; };
-		B575E74C368ABA4BA4C0F6822B3CAA60 /* Pods-DYMBookReader_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E20C7581FE06129A33AD268E15551C /* Pods-DYMBookReader_Tests-dummy.m */; };
-		C803FA9B4BD1BC4CEC409250817216EF /* DYMBookProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = F2869D32D9436FA7B690EB41015B68AE /* DYMBookProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D206D6F1510BCBCDEB396686790779D1 /* DYMBookProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED6DD122FD2EBCAA9E421FEBE5BDA9 /* DYMBookProvider.m */; };
-		EAFE480D1BC0294700388431 /* DYMBookPageDatasource.h in Headers */ = {isa = PBXBuildFile; fileRef = EAFE480B1BC0294700388431 /* DYMBookPageDatasource.h */; };
-		EAFE480E1BC0294700388431 /* DYMBookPageDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFE480C1BC0294700388431 /* DYMBookPageDatasource.m */; };
-		EB885AB114B01638712247C4B95C2C66 /* DYMBookReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2952E8AA1767FFF2AC48E26DA27A6637 /* DYMBookReaderViewController.m */; };
-		EF433628E7B699C9453DFC0D05384900 /* DYMBookReader.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B89D28478F50B76B069A63667BE96918 /* DYMBookReader.bundle */; };
+		13108BAD1010CF732C9EF18AD232E1BD /* DYMBookProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = AA33ECB7B5A0745A3891E32F4C5D8B8A /* DYMBookProvider.m */; };
+		17F1467C5E8A1F9EEF8A0BF04D7BE60C /* DYMBookReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CBBE7B06756D121F80F5371F80D201 /* DYMBookReaderViewController.m */; };
+		1BCC5C496F353862D3DC7EFA9A97345E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DAD3EEF3731CBF75CFC788D9A0B1BC /* Foundation.framework */; };
+		1DACFF89F9DDFC00184C55BB57CE7FA9 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 14A88275C6D01FBF1CD383B3CE222AB5 /* View+MASShorthandAdditions.h */; };
+		21DDF0F029157C0F5512142C3F969B8A /* DYMBookPageDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A4D05E903071B1A432E5A5A5A5DF87 /* DYMBookPageDatasource.m */; };
+		22C0F394439D0B275DD21778B9716812 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 44949EB5C4090CD9F0C3CE84891D43EB /* ViewController+MASAdditions.h */; };
+		42EB55112D58CDE01D2BEF7475A83F22 /* DYMBookProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = C69E3692BCA793FB193A8E8669399C67 /* DYMBookProvider.h */; };
+		48F21B511DFF423AE961C7A32A5DFF50 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0BA74DD66F53A9AF9110AD1586AB64 /* MASConstraint.m */; };
+		4946ABB0913E2F73EDD697BAEC25BAC6 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D570804A64D2A27E65A54411EB03DB9 /* MASLayoutConstraint.m */; };
+		4F2866BB77C8B21AC9BED9C7839BE9DF /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DB45A0FC9B2D0E995825A041D0D8C96 /* Masonry.h */; };
+		5459671947B9D1A76041E692F54ADDD8 /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 55A166441804D2D2982C0D8B9A5E890D /* MASConstraint+Private.h */; };
+		59A23A70144DA09237D70CE1F67D57C1 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C72CF3C33DBE84219306421304A97D3A /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		5BFEF60A430E6A2F891405E080801D96 /* Pods-DYMBookReader_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2C1678A49813BA9052BA581728A723 /* Pods-DYMBookReader_Example-dummy.m */; };
+		665A01DF00C43EDB35A48BE4ECD3DD02 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A41A17582A023CCBD533CF0620BC10D0 /* MASUtilities.h */; };
+		6ED108C5217F7EFC2B6265BC3C655ADD /* DYMBookReaderViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 10B8610A113E14C2E94D446AD8A42454 /* DYMBookReaderViewController.h */; };
+		76BABCB30A2A26DD61395A837331CAF2 /* DYMBookPageDatasource.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B32177E772E0E70F8CD8C7B1AF2EEB /* DYMBookPageDatasource.h */; };
+		798B69B33FFEBAFB7B5DF13E3C02CF18 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1E35BD43BE1353D3777B0AB0E0AA8E /* ViewController+MASAdditions.m */; };
+		7C285BE0BE6E5C7AEF3DB76C6C6FC103 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DAD3EEF3731CBF75CFC788D9A0B1BC /* Foundation.framework */; };
+		7D06646336CB042281735D512C37FB64 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEAA7776D286D14757BF8166DCFAB0F /* NSArray+MASAdditions.m */; };
+		7EF3634582AC6BA08C0D557FC9464764 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 5975D382CEC16297604D6842F17C0A30 /* MASConstraintMaker.h */; };
+		8076F1AD0CF489CA3952D0F601CEF5A4 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 799970B6D6B8EF122A6CC43A82FF2118 /* MASLayoutConstraint.h */; };
+		8494A0BAC4FA2A0AF9ABB534EA123C50 /* Pods-DYMBookReader_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD04DAD52CB1EA9C0625C61DC34D63DB /* Pods-DYMBookReader_Tests-dummy.m */; };
+		87B8B58422936BA3F77F6CFC9A4E91C2 /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = ADDFEB5B92DB3CA1881BBD3837832B1A /* MASViewAttribute.h */; };
+		89AEF055DC79A54B738F6FDA6280B9B8 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A415CBDFD7CF59649EE2C928D9DF13C /* NSArray+MASAdditions.h */; };
+		8FF506A6A8E5C3343582BC63492C43D0 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4C1E2CFD80F714A1335D96DC8FF00 /* Masonry-dummy.m */; };
+		99F4CC5D173054C2DA0BEB37B469BC09 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 850144C86804441BD9D01C0496EA7B29 /* NSArray+MASShorthandAdditions.h */; };
+		9B5BAA71BFB9CC7B02B3382BE78073BB /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7313408BE8E5381846D63D90FCC4BE6 /* Pods-dummy.m */; };
+		A7B501886BB4C5B5E7616EC5D03CF509 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BD3D08211A94394D82D50817F66693 /* View+MASAdditions.m */; };
+		AACC16BD33BDFA4038C61932C1B147F2 /* DYMBookReader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED95016B357EE1390419978D59BE0E8 /* DYMBookReader-dummy.m */; };
+		B2D992E804DD5CAB47E54B693277D07A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DAD3EEF3731CBF75CFC788D9A0B1BC /* Foundation.framework */; };
+		B2E6D272AC0B5931720A69E9700604BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DAD3EEF3731CBF75CFC788D9A0B1BC /* Foundation.framework */; };
+		B639156EC221B8C678515DC8C535F82E /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 32BAFE6579ADAF782B4A127D7FDF31D5 /* MASConstraint.h */; };
+		B673476F39DD62E5A57EE9F3E22B540A /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = E48DC2ACDA79D429E183CB13545B4DB7 /* MASViewConstraint.m */; };
+		B929A0401FBF11F9C792CA20809971DC /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B39D6829EF4E235AF3F112BED7D8BE1C /* MASConstraintMaker.m */; };
+		C5F8BD7A20D23F1B5E91B224047CD6BD /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = B97DB61909C3208CBEFD28CB32C1FE79 /* MASViewConstraint.h */; };
+		C7DF452BEAD5B3A25D0045FA9D01EFAC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158CDDCFB1D1821CB7B0DF958E432578 /* UIKit.framework */; };
+		CC570974680DBCD19EB250725019DE68 /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 5026FE6F1B0B2636BC6A1D57A7175A7B /* MASCompositeConstraint.h */; };
+		D320E5E12907ED1FE3A72B837E85CC89 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 73F6DFF931F751F45C3E0F0E74F0B7C7 /* MASCompositeConstraint.m */; };
+		D93C15CD1D53703B0052D61574D20CFC /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = A0A2E39ED04FEEA6C96465490FD03AD1 /* NSLayoutConstraint+MASDebugAdditions.h */; };
+		DD0BB473A7533F58BC4B92B11220098F /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AC64280C686D67313C3EA6CA9307F1AF /* View+MASAdditions.h */; };
+		E80464DD493A3CE188BAE83D5E6DF7F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DAD3EEF3731CBF75CFC788D9A0B1BC /* Foundation.framework */; };
+		EDB0AF602D1B33CCAB22BA54F124CE91 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9554748ACA1776596F21CB816D29DB /* MASViewAttribute.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3A3A5452B9E68910094CEBE46BC1A665 /* PBXContainerItemProxy */ = {
+		176EF067FFC1903F81DD650927A64592 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 481B909E74AD7E14BD46075E2F8927A3;
-			remoteInfo = DYMBookReader;
+			remoteGlobalIDString = 6B25CBEB1DE9B4AF3FDB9230CFB03999;
+			remoteInfo = Masonry;
 		};
-		76A70CA69745FA4D93089323D8E7B45C /* PBXContainerItemProxy */ = {
+		2259D46886E659F3E53D179A227026A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 481B909E74AD7E14BD46075E2F8927A3;
-			remoteInfo = DYMBookReader;
+			remoteGlobalIDString = 6B25CBEB1DE9B4AF3FDB9230CFB03999;
+			remoteInfo = Masonry;
 		};
-		79E3D12B70F3437A8BB27204C94D6498 /* PBXContainerItemProxy */ = {
+		31004CB9581B5C709FF28384B0E47A31 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F99D0544165D2F0B88E9FC82CA5C3C5C;
+			remoteGlobalIDString = 6B25CBEB1DE9B4AF3FDB9230CFB03999;
+			remoteInfo = Masonry;
+		};
+		4F45BFB8B2C2583CA1D9F8843FFED7D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73D474265843796C7F89ED77BD1F7492;
 			remoteInfo = "DYMBookReader-DYMBookReader";
+		};
+		75C998C0E640F36483D2A390B40C9FA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4376AD07BDCD6421C85A8732C2397EED;
+			remoteInfo = DYMBookReader;
+		};
+		A8D7606B683A1A166A7EE86A8E0A97E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B25CBEB1DE9B4AF3FDB9230CFB03999;
+			remoteInfo = Masonry;
+		};
+		B4B28C0E7789C830145561F16D02D9B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4376AD07BDCD6421C85A8732C2397EED;
+			remoteInfo = DYMBookReader;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03C03E0F40FBAD36D0D3B6753FDBF33D /* DYMBookReader-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DYMBookReader-prefix.pch"; sourceTree = "<group>"; };
-		089772A72DB7F80871ED0204F3FC0D26 /* Pods-DYMBookReader_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DYMBookReader_Example-frameworks.sh"; sourceTree = "<group>"; };
-		0A42BD5600396A72D8AFC5425AFCC967 /* Pods-DYMBookReader_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DYMBookReader_Tests-umbrella.h"; sourceTree = "<group>"; };
-		0CC852EF0645A316A35DF2AE287F86F7 /* Pods-DYMBookReader_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DYMBookReader_Example-umbrella.h"; sourceTree = "<group>"; };
-		0E5C127E019ED27A9EF6F3CF900E5468 /* Pods-DYMBookReader_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DYMBookReader_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		1894749C850C56EAF4F1FAF75C001437 /* DYMBookReader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DYMBookReader-dummy.m"; sourceTree = "<group>"; };
-		24E8FDC269C23EC41A54E4EE0740BEE7 /* Pods-DYMBookReader_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DYMBookReader_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		267883C7B43CC64D805762F6A80DDF0C /* DYMBookReader.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DYMBookReader.modulemap; sourceTree = "<group>"; };
-		2952E8AA1767FFF2AC48E26DA27A6637 /* DYMBookReaderViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DYMBookReaderViewController.m; sourceTree = "<group>"; };
-		2ABE23C2150771472639E68E1F872FAE /* DYMBookReader-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DYMBookReader-umbrella.h"; sourceTree = "<group>"; };
-		34ED6DD122FD2EBCAA9E421FEBE5BDA9 /* DYMBookProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DYMBookProvider.m; sourceTree = "<group>"; };
-		57411553F074889268009077001662B0 /* Pods-DYMBookReader_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DYMBookReader_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		59EB5C7BED3B019E21C5E694E8631C28 /* Pods-DYMBookReader_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DYMBookReader_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		63D41D7960447200A00D7F47858E7815 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6FEFBEE763B12506268CA63E3A5655EA /* Pods-DYMBookReader_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DYMBookReader_Example-resources.sh"; sourceTree = "<group>"; };
-		7898BC34C5A656BDDB463184686FE583 /* Pods-DYMBookReader_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DYMBookReader_Tests-resources.sh"; sourceTree = "<group>"; };
-		8142F46301095F0C282E00F81232AAD8 /* Pods-DYMBookReader_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DYMBookReader_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		889E7E39CA207E8784E8FDA175C92540 /* DYMBookReaderViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DYMBookReaderViewController.h; sourceTree = "<group>"; };
-		8F7E6722CB5A6DC8F9F614078DA85076 /* DYMBookReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DYMBookReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9689D47E72FFA06854402AFCB4609C8C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		982BB9475299C06157997FFA765E4899 /* Pods-DYMBookReader_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DYMBookReader_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		A08DA31596046E1CA8E4D81CDF616A2A /* Pods-DYMBookReader_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DYMBookReader_Tests.modulemap"; sourceTree = "<group>"; };
-		A3A470A17555CC8B3E3F616D2EAE75BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		A3F544A47A425B2B82274DA5BAC387F2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B6C9F49585EDA9358E8C143FAF1C46C7 /* DYMBookReader-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "DYMBookReader-Private.xcconfig"; sourceTree = "<group>"; };
-		B719A43E89F9251198E1E056972522FB /* Pods-DYMBookReader_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DYMBookReader_Example.release.xcconfig"; sourceTree = "<group>"; };
-		B89D28478F50B76B069A63667BE96918 /* DYMBookReader.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYMBookReader.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		02B13CAC659E5ABE5BE7340731BEAEAE /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		07C34BA667785F5CBFB8831C1E4E04C0 /* Pods-DYMBookReader_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DYMBookReader_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		10B8610A113E14C2E94D446AD8A42454 /* DYMBookReaderViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DYMBookReaderViewController.h; sourceTree = "<group>"; };
+		14A88275C6D01FBF1CD383B3CE222AB5 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		158CDDCFB1D1821CB7B0DF958E432578 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		182A81CE3C46AABEA7B1CE3F4D1E9A98 /* libPods-DYMBookReader_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DYMBookReader_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29A4D05E903071B1A432E5A5A5A5DF87 /* DYMBookPageDatasource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DYMBookPageDatasource.m; sourceTree = "<group>"; };
+		29D34CE2228F844C907C2D903D65CA2F /* DYMBookReader-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DYMBookReader-prefix.pch"; sourceTree = "<group>"; };
+		2A0C7E976D762C09DB19107E93B0FBDF /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2DB45A0FC9B2D0E995825A041D0D8C96 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
+		32BAFE6579ADAF782B4A127D7FDF31D5 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
+		33355122DF64665DCECEF3433A956545 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3421831D4BB596D1D179BC2C18835EAE /* DYMBookReader-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "DYMBookReader-Private.xcconfig"; sourceTree = "<group>"; };
+		3A2582AC144007C1384F8F021435B53B /* Pods-DYMBookReader_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DYMBookReader_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		44949EB5C4090CD9F0C3CE84891D43EB /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		4BE4C1E2CFD80F714A1335D96DC8FF00 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
+		4D570804A64D2A27E65A54411EB03DB9 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
+		4F1E35BD43BE1353D3777B0AB0E0AA8E /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		5026FE6F1B0B2636BC6A1D57A7175A7B /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
+		55A166441804D2D2982C0D8B9A5E890D /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
+		563E804382FF811F14F1F5DA4FA4D858 /* libDYMBookReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDYMBookReader.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		58584C558BC786DBD854C9D516D8132A /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		5975D382CEC16297604D6842F17C0A30 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
+		59B32177E772E0E70F8CD8C7B1AF2EEB /* DYMBookPageDatasource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DYMBookPageDatasource.h; sourceTree = "<group>"; };
+		62CA0C3A82C271EDFA5A40CE1D72E443 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		67BD3D08211A94394D82D50817F66693 /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
+		6A415CBDFD7CF59649EE2C928D9DF13C /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		73F6DFF931F751F45C3E0F0E74F0B7C7 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
+		78851D7F409F4930DA8A01562878D04E /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
+		799970B6D6B8EF122A6CC43A82FF2118 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
+		7C434612C88E4481F2C6ECC700E3D316 /* libPods-DYMBookReader_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DYMBookReader_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ED95016B357EE1390419978D59BE0E8 /* DYMBookReader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DYMBookReader-dummy.m"; sourceTree = "<group>"; };
+		850144C86804441BD9D01C0496EA7B29 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		862A1CDC90F26F7F7EE7D2B3841B94F4 /* Masonry-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Masonry-Private.xcconfig"; sourceTree = "<group>"; };
+		89A7D06FFBDDFCFBCD23E95E394FBD93 /* libMasonry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMasonry.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0A2E39ED04FEEA6C96465490FD03AD1 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		A41A17582A023CCBD533CF0620BC10D0 /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
+		A948E5E13865943AAF4D9AEF67B29310 /* Pods-DYMBookReader_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DYMBookReader_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		AA33ECB7B5A0745A3891E32F4C5D8B8A /* DYMBookProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DYMBookProvider.m; sourceTree = "<group>"; };
+		AC64280C686D67313C3EA6CA9307F1AF /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
+		AD04DAD52CB1EA9C0625C61DC34D63DB /* Pods-DYMBookReader_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DYMBookReader_Tests-dummy.m"; sourceTree = "<group>"; };
+		ADDFEB5B92DB3CA1881BBD3837832B1A /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
+		AE2C1678A49813BA9052BA581728A723 /* Pods-DYMBookReader_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DYMBookReader_Example-dummy.m"; sourceTree = "<group>"; };
+		B39D6829EF4E235AF3F112BED7D8BE1C /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
+		B97DB61909C3208CBEFD28CB32C1FE79 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
+		B9DAD3EEF3731CBF75CFC788D9A0B1BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		D01DBA462D6599B59FCB61210151EAEF /* Pods_DYMBookReader_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYMBookReader_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBFA8710B3277DC6BA1916ABA0F0206C /* Pods-DYMBookReader_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DYMBookReader_Example.modulemap"; sourceTree = "<group>"; };
-		E2B83190C450CC43741F10FFD3C23AB1 /* Pods-DYMBookReader_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DYMBookReader_Example-dummy.m"; sourceTree = "<group>"; };
-		EAFE480B1BC0294700388431 /* DYMBookPageDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYMBookPageDatasource.h; sourceTree = "<group>"; };
-		EAFE480C1BC0294700388431 /* DYMBookPageDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYMBookPageDatasource.m; sourceTree = "<group>"; };
-		ECD8F171FF6B5F6ECE7062E1BCE54298 /* Pods_DYMBookReader_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYMBookReader_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2869D32D9436FA7B690EB41015B68AE /* DYMBookProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DYMBookProvider.h; sourceTree = "<group>"; };
-		F40D8415F9E187F2D71657429D8C16C9 /* DYMBookReader.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DYMBookReader.xcconfig; sourceTree = "<group>"; };
-		F4AB88A4CB26196486EB81C3A2C57ADC /* Pods-DYMBookReader_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DYMBookReader_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		F7E20C7581FE06129A33AD268E15551C /* Pods-DYMBookReader_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DYMBookReader_Tests-dummy.m"; sourceTree = "<group>"; };
-		F8110CD48F44CE9E739E051B3A287E2E /* Pods-DYMBookReader_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DYMBookReader_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BDD5054A8C7C75D9B8D1C86AED9DE98A /* Pods-DYMBookReader_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DYMBookReader_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		BEF693D42A41CF720C881D91645198FE /* Pods-DYMBookReader_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DYMBookReader_Example-resources.sh"; sourceTree = "<group>"; };
+		BF0BF68A12A81259B46032604308B638 /* DYMBookReader.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYMBookReader.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		C69E3692BCA793FB193A8E8669399C67 /* DYMBookProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DYMBookProvider.h; sourceTree = "<group>"; };
+		C6CBBE7B06756D121F80F5371F80D201 /* DYMBookReaderViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DYMBookReaderViewController.m; sourceTree = "<group>"; };
+		C72CF3C33DBE84219306421304A97D3A /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		C7313408BE8E5381846D63D90FCC4BE6 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		CC0BA74DD66F53A9AF9110AD1586AB64 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
+		CE9554748ACA1776596F21CB816D29DB /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
+		D040B6740FECB3DC6614F1DD918B59E9 /* Pods-DYMBookReader_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DYMBookReader_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		D9C9BAAE0D378863C67D3926849AEADD /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
+		DD8323B0ADC280DB5698FE9EA049871C /* Pods-DYMBookReader_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DYMBookReader_Example.release.xcconfig"; sourceTree = "<group>"; };
+		E48DC2ACDA79D429E183CB13545B4DB7 /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
+		E9074EA904EDBC41D815E86E81373F3E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		EAB7E8C72A630E5A90FCD68D83675113 /* Pods-DYMBookReader_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DYMBookReader_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EDEAA7776D286D14757BF8166DCFAB0F /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		F414E262141CE2B0B833A83A2C4E2B81 /* Pods-DYMBookReader_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DYMBookReader_Tests-resources.sh"; sourceTree = "<group>"; };
+		F4F522EC94CD718EDB58479372A91008 /* Pods-DYMBookReader_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DYMBookReader_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F5D37D0169308F34BE9CF03ECB1F1DF9 /* DYMBookReader.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DYMBookReader.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		00A3AF90D8CD35A7B5A19DC8016DE436 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				839C9DD12C98B584803CADAF7E11910A /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3B339A1473C2B3F5914FF30B00F8DE69 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B44EE9337CC69A65019A6224E3DA7C92 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		98BB8D9C45F3D4B053BAB931143D43FE /* Frameworks */ = {
+		4E896A6318EE1A6F7783394B73F1152C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D491E1CAD77A71EFC838832070059454 /* Frameworks */ = {
+		5F3FD1993EFE42B9E3D74B0CAE8223D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50C842E22AB0E9B56168B8F6C6F0B118 /* Foundation.framework in Frameworks */,
+				1BCC5C496F353862D3DC7EFA9A97345E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		692A8865D4F462E40C6DDC4E281BB2A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E80464DD493A3CE188BAE83D5E6DF7F0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7620C297FF348B54F8471C4548186CEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2D992E804DD5CAB47E54B693277D07A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4828231C45921064DA7212053F8E59D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C285BE0BE6E5C7AEF3DB76C6C6FC103 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8713B53DB26AD0A38A52E055530DE33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E6D272AC0B5931720A69E9700604BB /* Foundation.framework in Frameworks */,
+				C7DF452BEAD5B3A25D0045FA9D01EFAC /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1EA96D6C4D5094209C191EC16434003E /* Pod */ = {
+		01373F9E3AF54E53D72810104B148B4B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3DC9232ACE6CC97DB7B2B38553F433EE /* Classes */,
-			);
-			path = Pod;
-			sourceTree = "<group>";
-		};
-		31400C0885BA7E3D9392A44D93962B03 /* Pods-DYMBookReader_Example */ = {
-			isa = PBXGroup;
-			children = (
-				A3F544A47A425B2B82274DA5BAC387F2 /* Info.plist */,
-				DBFA8710B3277DC6BA1916ABA0F0206C /* Pods-DYMBookReader_Example.modulemap */,
-				57411553F074889268009077001662B0 /* Pods-DYMBookReader_Example-acknowledgements.markdown */,
-				8142F46301095F0C282E00F81232AAD8 /* Pods-DYMBookReader_Example-acknowledgements.plist */,
-				E2B83190C450CC43741F10FFD3C23AB1 /* Pods-DYMBookReader_Example-dummy.m */,
-				089772A72DB7F80871ED0204F3FC0D26 /* Pods-DYMBookReader_Example-frameworks.sh */,
-				6FEFBEE763B12506268CA63E3A5655EA /* Pods-DYMBookReader_Example-resources.sh */,
-				0CC852EF0645A316A35DF2AE287F86F7 /* Pods-DYMBookReader_Example-umbrella.h */,
-				982BB9475299C06157997FFA765E4899 /* Pods-DYMBookReader_Example.debug.xcconfig */,
-				B719A43E89F9251198E1E056972522FB /* Pods-DYMBookReader_Example.release.xcconfig */,
-			);
-			name = "Pods-DYMBookReader_Example";
-			path = "Target Support Files/Pods-DYMBookReader_Example";
-			sourceTree = "<group>";
-		};
-		3DC9232ACE6CC97DB7B2B38553F433EE /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				F2869D32D9436FA7B690EB41015B68AE /* DYMBookProvider.h */,
-				34ED6DD122FD2EBCAA9E421FEBE5BDA9 /* DYMBookProvider.m */,
-				889E7E39CA207E8784E8FDA175C92540 /* DYMBookReaderViewController.h */,
-				2952E8AA1767FFF2AC48E26DA27A6637 /* DYMBookReaderViewController.m */,
-				EAFE480B1BC0294700388431 /* DYMBookPageDatasource.h */,
-				EAFE480C1BC0294700388431 /* DYMBookPageDatasource.m */,
+				59B32177E772E0E70F8CD8C7B1AF2EEB /* DYMBookPageDatasource.h */,
+				29A4D05E903071B1A432E5A5A5A5DF87 /* DYMBookPageDatasource.m */,
+				C69E3692BCA793FB193A8E8669399C67 /* DYMBookProvider.h */,
+				AA33ECB7B5A0745A3891E32F4C5D8B8A /* DYMBookProvider.m */,
+				10B8610A113E14C2E94D446AD8A42454 /* DYMBookReaderViewController.h */,
+				C6CBBE7B06756D121F80F5371F80D201 /* DYMBookReaderViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+		01C17A56ED413A3B7F1343C05709E912 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A3A470A17555CC8B3E3F616D2EAE75BA /* Foundation.framework */,
+				78851D7F409F4930DA8A01562878D04E /* Masonry.xcconfig */,
+				862A1CDC90F26F7F7EE7D2B3841B94F4 /* Masonry-Private.xcconfig */,
+				4BE4C1E2CFD80F714A1335D96DC8FF00 /* Masonry-dummy.m */,
+				D9C9BAAE0D378863C67D3926849AEADD /* Masonry-prefix.pch */,
 			);
-			name = iOS;
+			name = "Support Files";
+			path = "../Target Support Files/Masonry";
+			sourceTree = "<group>";
+		};
+		0D41F61EBA03D133CCCAFCF7B62A607B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F5D37D0169308F34BE9CF03ECB1F1DF9 /* DYMBookReader.xcconfig */,
+				3421831D4BB596D1D179BC2C18835EAE /* DYMBookReader-Private.xcconfig */,
+				7ED95016B357EE1390419978D59BE0E8 /* DYMBookReader-dummy.m */,
+				29D34CE2228F844C907C2D903D65CA2F /* DYMBookReader-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/DYMBookReader";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0FB9306D21AF23A056944AE037CBFFF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5DA1043CCF007DBC729FE99FD6D2DD29 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D9DD8F8262668F23397F4DB6BC239D0 /* Pods */,
+				716B9057D3DEE7ED9F991675814AA03E /* Pods-DYMBookReader_Example */,
+				FDB4E9B5AAC968A0DA7AE7940866A9AA /* Pods-DYMBookReader_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6D9DD8F8262668F23397F4DB6BC239D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A0C7E976D762C09DB19107E93B0FBDF /* Pods-acknowledgements.markdown */,
+				02B13CAC659E5ABE5BE7340731BEAEAE /* Pods-acknowledgements.plist */,
+				C7313408BE8E5381846D63D90FCC4BE6 /* Pods-dummy.m */,
+				58584C558BC786DBD854C9D516D8132A /* Pods-resources.sh */,
+				62CA0C3A82C271EDFA5A40CE1D72E443 /* Pods.debug.xcconfig */,
+				E9074EA904EDBC41D815E86E81373F3E /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		716B9057D3DEE7ED9F991675814AA03E /* Pods-DYMBookReader_Example */ = {
+			isa = PBXGroup;
+			children = (
+				EAB7E8C72A630E5A90FCD68D83675113 /* Pods-DYMBookReader_Example-acknowledgements.markdown */,
+				BDD5054A8C7C75D9B8D1C86AED9DE98A /* Pods-DYMBookReader_Example-acknowledgements.plist */,
+				AE2C1678A49813BA9052BA581728A723 /* Pods-DYMBookReader_Example-dummy.m */,
+				BEF693D42A41CF720C881D91645198FE /* Pods-DYMBookReader_Example-resources.sh */,
+				F4F522EC94CD718EDB58479372A91008 /* Pods-DYMBookReader_Example.debug.xcconfig */,
+				DD8323B0ADC280DB5698FE9EA049871C /* Pods-DYMBookReader_Example.release.xcconfig */,
+			);
+			name = "Pods-DYMBookReader_Example";
+			path = "Target Support Files/Pods-DYMBookReader_Example";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -178,186 +312,215 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				B8D8B41409AE8D03FA94FDE4FF79B576 /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				E9B49E9D4F6BC02AA78DCF86BCED2145 /* Pods */,
 				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
-				F0D7705B803D38DC7E8661767D6E77B4 /* Targets Support Files */,
+				5DA1043CCF007DBC729FE99FD6D2DD29 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		B8D8B41409AE8D03FA94FDE4FF79B576 /* Development Pods */ = {
+		A7865949D33DD5B49C47641CF824D0D8 /* DYMBookReader */ = {
 			isa = PBXGroup;
 			children = (
-				D128371365A2FB1848DA3624340365F3 /* DYMBookReader */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C3EE00FF554F19176E72300DBA7C5897 /* Pods-DYMBookReader_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				9689D47E72FFA06854402AFCB4609C8C /* Info.plist */,
-				A08DA31596046E1CA8E4D81CDF616A2A /* Pods-DYMBookReader_Tests.modulemap */,
-				F8110CD48F44CE9E739E051B3A287E2E /* Pods-DYMBookReader_Tests-acknowledgements.markdown */,
-				0E5C127E019ED27A9EF6F3CF900E5468 /* Pods-DYMBookReader_Tests-acknowledgements.plist */,
-				F7E20C7581FE06129A33AD268E15551C /* Pods-DYMBookReader_Tests-dummy.m */,
-				F4AB88A4CB26196486EB81C3A2C57ADC /* Pods-DYMBookReader_Tests-frameworks.sh */,
-				7898BC34C5A656BDDB463184686FE583 /* Pods-DYMBookReader_Tests-resources.sh */,
-				0A42BD5600396A72D8AFC5425AFCC967 /* Pods-DYMBookReader_Tests-umbrella.h */,
-				59EB5C7BED3B019E21C5E694E8631C28 /* Pods-DYMBookReader_Tests.debug.xcconfig */,
-				24E8FDC269C23EC41A54E4EE0740BEE7 /* Pods-DYMBookReader_Tests.release.xcconfig */,
-			);
-			name = "Pods-DYMBookReader_Tests";
-			path = "Target Support Files/Pods-DYMBookReader_Tests";
-			sourceTree = "<group>";
-		};
-		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B89D28478F50B76B069A63667BE96918 /* DYMBookReader.bundle */,
-				8F7E6722CB5A6DC8F9F614078DA85076 /* DYMBookReader.framework */,
-				ECD8F171FF6B5F6ECE7062E1BCE54298 /* Pods_DYMBookReader_Example.framework */,
-				D01DBA462D6599B59FCB61210151EAEF /* Pods_DYMBookReader_Tests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		D128371365A2FB1848DA3624340365F3 /* DYMBookReader */ = {
-			isa = PBXGroup;
-			children = (
-				1EA96D6C4D5094209C191EC16434003E /* Pod */,
-				EEC7E8F207E611DCC08075C1134A26CA /* Support Files */,
+				A9569A6E3566522029752E23C35F6E72 /* Pod */,
+				0D41F61EBA03D133CCCAFCF7B62A607B /* Support Files */,
 			);
 			name = DYMBookReader;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		EEC7E8F207E611DCC08075C1134A26CA /* Support Files */ = {
+		A9569A6E3566522029752E23C35F6E72 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				267883C7B43CC64D805762F6A80DDF0C /* DYMBookReader.modulemap */,
-				F40D8415F9E187F2D71657429D8C16C9 /* DYMBookReader.xcconfig */,
-				B6C9F49585EDA9358E8C143FAF1C46C7 /* DYMBookReader-Private.xcconfig */,
-				1894749C850C56EAF4F1FAF75C001437 /* DYMBookReader-dummy.m */,
-				03C03E0F40FBAD36D0D3B6753FDBF33D /* DYMBookReader-prefix.pch */,
-				2ABE23C2150771472639E68E1F872FAE /* DYMBookReader-umbrella.h */,
-				63D41D7960447200A00D7F47858E7815 /* Info.plist */,
+				01373F9E3AF54E53D72810104B148B4B /* Classes */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/DYMBookReader";
+			path = Pod;
 			sourceTree = "<group>";
 		};
-		F0D7705B803D38DC7E8661767D6E77B4 /* Targets Support Files */ = {
+		B8D8B41409AE8D03FA94FDE4FF79B576 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				31400C0885BA7E3D9392A44D93962B03 /* Pods-DYMBookReader_Example */,
-				C3EE00FF554F19176E72300DBA7C5897 /* Pods-DYMBookReader_Tests */,
+				A7865949D33DD5B49C47641CF824D0D8 /* DYMBookReader */,
 			);
-			name = "Targets Support Files";
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF0BF68A12A81259B46032604308B638 /* DYMBookReader.bundle */,
+				563E804382FF811F14F1F5DA4FA4D858 /* libDYMBookReader.a */,
+				89A7D06FFBDDFCFBCD23E95E394FBD93 /* libMasonry.a */,
+				33355122DF64665DCECEF3433A956545 /* libPods.a */,
+				182A81CE3C46AABEA7B1CE3F4D1E9A98 /* libPods-DYMBookReader_Example.a */,
+				7C434612C88E4481F2C6ECC700E3D316 /* libPods-DYMBookReader_Tests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0FB9306D21AF23A056944AE037CBFFF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B9DAD3EEF3731CBF75CFC788D9A0B1BC /* Foundation.framework */,
+				158CDDCFB1D1821CB7B0DF958E432578 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		DFD2AAAFDCD99284B18C808D688F977B /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				5026FE6F1B0B2636BC6A1D57A7175A7B /* MASCompositeConstraint.h */,
+				73F6DFF931F751F45C3E0F0E74F0B7C7 /* MASCompositeConstraint.m */,
+				32BAFE6579ADAF782B4A127D7FDF31D5 /* MASConstraint.h */,
+				CC0BA74DD66F53A9AF9110AD1586AB64 /* MASConstraint.m */,
+				55A166441804D2D2982C0D8B9A5E890D /* MASConstraint+Private.h */,
+				5975D382CEC16297604D6842F17C0A30 /* MASConstraintMaker.h */,
+				B39D6829EF4E235AF3F112BED7D8BE1C /* MASConstraintMaker.m */,
+				799970B6D6B8EF122A6CC43A82FF2118 /* MASLayoutConstraint.h */,
+				4D570804A64D2A27E65A54411EB03DB9 /* MASLayoutConstraint.m */,
+				A41A17582A023CCBD533CF0620BC10D0 /* MASUtilities.h */,
+				ADDFEB5B92DB3CA1881BBD3837832B1A /* MASViewAttribute.h */,
+				CE9554748ACA1776596F21CB816D29DB /* MASViewAttribute.m */,
+				B97DB61909C3208CBEFD28CB32C1FE79 /* MASViewConstraint.h */,
+				E48DC2ACDA79D429E183CB13545B4DB7 /* MASViewConstraint.m */,
+				2DB45A0FC9B2D0E995825A041D0D8C96 /* Masonry.h */,
+				6A415CBDFD7CF59649EE2C928D9DF13C /* NSArray+MASAdditions.h */,
+				EDEAA7776D286D14757BF8166DCFAB0F /* NSArray+MASAdditions.m */,
+				850144C86804441BD9D01C0496EA7B29 /* NSArray+MASShorthandAdditions.h */,
+				A0A2E39ED04FEEA6C96465490FD03AD1 /* NSLayoutConstraint+MASDebugAdditions.h */,
+				C72CF3C33DBE84219306421304A97D3A /* NSLayoutConstraint+MASDebugAdditions.m */,
+				AC64280C686D67313C3EA6CA9307F1AF /* View+MASAdditions.h */,
+				67BD3D08211A94394D82D50817F66693 /* View+MASAdditions.m */,
+				14A88275C6D01FBF1CD383B3CE222AB5 /* View+MASShorthandAdditions.h */,
+				44949EB5C4090CD9F0C3CE84891D43EB /* ViewController+MASAdditions.h */,
+				4F1E35BD43BE1353D3777B0AB0E0AA8E /* ViewController+MASAdditions.m */,
+				01C17A56ED413A3B7F1343C05709E912 /* Support Files */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		E9B49E9D4F6BC02AA78DCF86BCED2145 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DFD2AAAFDCD99284B18C808D688F977B /* Masonry */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FDB4E9B5AAC968A0DA7AE7940866A9AA /* Pods-DYMBookReader_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				07C34BA667785F5CBFB8831C1E4E04C0 /* Pods-DYMBookReader_Tests-acknowledgements.markdown */,
+				3A2582AC144007C1384F8F021435B53B /* Pods-DYMBookReader_Tests-acknowledgements.plist */,
+				AD04DAD52CB1EA9C0625C61DC34D63DB /* Pods-DYMBookReader_Tests-dummy.m */,
+				F414E262141CE2B0B833A83A2C4E2B81 /* Pods-DYMBookReader_Tests-resources.sh */,
+				D040B6740FECB3DC6614F1DD918B59E9 /* Pods-DYMBookReader_Tests.debug.xcconfig */,
+				A948E5E13865943AAF4D9AEF67B29310 /* Pods-DYMBookReader_Tests.release.xcconfig */,
+			);
+			name = "Pods-DYMBookReader_Tests";
+			path = "Target Support Files/Pods-DYMBookReader_Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		317BA8CEC121FD9DFE4632447F4B07A5 /* Headers */ = {
+		3B70165DC505F88DBA7DB62A4F35A389 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F89EC2DE3EBF5A025DE4BED4BA4ABEA /* Pods-DYMBookReader_Example-umbrella.h in Headers */,
+				76BABCB30A2A26DD61395A837331CAF2 /* DYMBookPageDatasource.h in Headers */,
+				42EB55112D58CDE01D2BEF7475A83F22 /* DYMBookProvider.h in Headers */,
+				6ED108C5217F7EFC2B6265BC3C655ADD /* DYMBookReaderViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		926A505AA0A3FAD2C93AA85C153E0FB3 /* Headers */ = {
+		A5982ACC4F4EBE40CCD0E0122D4DE552 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C803FA9B4BD1BC4CEC409250817216EF /* DYMBookProvider.h in Headers */,
-				7B0EFCE0A80A97043E7D6F34602D49F1 /* DYMBookReader-umbrella.h in Headers */,
-				EAFE480D1BC0294700388431 /* DYMBookPageDatasource.h in Headers */,
-				2D2E9EF6C56A11A558FD512ABD768316 /* DYMBookReaderViewController.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9582A03259E3CB16AE251CD183E003F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3574D2358E53DDF789872F3AF3D2BE55 /* Pods-DYMBookReader_Tests-umbrella.h in Headers */,
+				CC570974680DBCD19EB250725019DE68 /* MASCompositeConstraint.h in Headers */,
+				5459671947B9D1A76041E692F54ADDD8 /* MASConstraint+Private.h in Headers */,
+				B639156EC221B8C678515DC8C535F82E /* MASConstraint.h in Headers */,
+				7EF3634582AC6BA08C0D557FC9464764 /* MASConstraintMaker.h in Headers */,
+				8076F1AD0CF489CA3952D0F601CEF5A4 /* MASLayoutConstraint.h in Headers */,
+				665A01DF00C43EDB35A48BE4ECD3DD02 /* MASUtilities.h in Headers */,
+				87B8B58422936BA3F77F6CFC9A4E91C2 /* MASViewAttribute.h in Headers */,
+				C5F8BD7A20D23F1B5E91B224047CD6BD /* MASViewConstraint.h in Headers */,
+				4F2866BB77C8B21AC9BED9C7839BE9DF /* Masonry.h in Headers */,
+				89AEF055DC79A54B738F6FDA6280B9B8 /* NSArray+MASAdditions.h in Headers */,
+				99F4CC5D173054C2DA0BEB37B469BC09 /* NSArray+MASShorthandAdditions.h in Headers */,
+				D93C15CD1D53703B0052D61574D20CFC /* NSLayoutConstraint+MASDebugAdditions.h in Headers */,
+				DD0BB473A7533F58BC4B92B11220098F /* View+MASAdditions.h in Headers */,
+				1DACFF89F9DDFC00184C55BB57CE7FA9 /* View+MASShorthandAdditions.h in Headers */,
+				22C0F394439D0B275DD21778B9716812 /* ViewController+MASAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		481B909E74AD7E14BD46075E2F8927A3 /* DYMBookReader */ = {
+		0272D05818C4773D7ED0453BC4AFC571 /* Pods-DYMBookReader_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 290EBEBDD098683DF4C4332DD3C67A1F /* Build configuration list for PBXNativeTarget "DYMBookReader" */;
+			buildConfigurationList = 5572A2A19E3D7C2A43424F83A4D8CCA7 /* Build configuration list for PBXNativeTarget "Pods-DYMBookReader_Example" */;
 			buildPhases = (
-				39B37B55E2DC1E0F45BE4D6285593455 /* Sources */,
-				D491E1CAD77A71EFC838832070059454 /* Frameworks */,
-				A84CD8225D337D778B52A45E90F31AED /* Resources */,
-				926A505AA0A3FAD2C93AA85C153E0FB3 /* Headers */,
+				857C827978599A26D7C33261951B0EBC /* Sources */,
+				A4828231C45921064DA7212053F8E59D /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				407B8C2580D4F3BADCF8A59AB9236151 /* PBXTargetDependency */,
-			);
-			name = DYMBookReader;
-			productName = DYMBookReader;
-			productReference = 8F7E6722CB5A6DC8F9F614078DA85076 /* DYMBookReader.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		7D89F6F472859B89BAF1A7ABCA58859B /* Pods-DYMBookReader_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F134AB736F70319C4C0ABBE196406548 /* Build configuration list for PBXNativeTarget "Pods-DYMBookReader_Tests" */;
-			buildPhases = (
-				F1EE2C85868369B6753336D9A22A62DD /* Sources */,
-				3B339A1473C2B3F5914FF30B00F8DE69 /* Frameworks */,
-				E9582A03259E3CB16AE251CD183E003F /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B7F0A61C9B8C0D866B97047EEF371A2A /* PBXTargetDependency */,
-			);
-			name = "Pods-DYMBookReader_Tests";
-			productName = "Pods-DYMBookReader_Tests";
-			productReference = D01DBA462D6599B59FCB61210151EAEF /* Pods_DYMBookReader_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		D70BA68593B90F4A65EA74F70A7611E7 /* Pods-DYMBookReader_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5F9ADB559D81DE10F70E42F7A756D205 /* Build configuration list for PBXNativeTarget "Pods-DYMBookReader_Example" */;
-			buildPhases = (
-				1141817C677B4FB0A325678DDED273D6 /* Sources */,
-				00A3AF90D8CD35A7B5A19DC8016DE436 /* Frameworks */,
-				317BA8CEC121FD9DFE4632447F4B07A5 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6FDE4D74032261D9C57401CEEA70A8F5 /* PBXTargetDependency */,
+				7320F43FBAB45E38582C1B8340B4DD0D /* PBXTargetDependency */,
+				135568316C241D11D60466A8E11C55F8 /* PBXTargetDependency */,
 			);
 			name = "Pods-DYMBookReader_Example";
 			productName = "Pods-DYMBookReader_Example";
-			productReference = ECD8F171FF6B5F6ECE7062E1BCE54298 /* Pods_DYMBookReader_Example.framework */;
-			productType = "com.apple.product-type.framework";
+			productReference = 182A81CE3C46AABEA7B1CE3F4D1E9A98 /* libPods-DYMBookReader_Example.a */;
+			productType = "com.apple.product-type.library.static";
 		};
-		F99D0544165D2F0B88E9FC82CA5C3C5C /* DYMBookReader-DYMBookReader */ = {
+		4376AD07BDCD6421C85A8732C2397EED /* DYMBookReader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42B90CA9473AF651EA0489028B770FF3 /* Build configuration list for PBXNativeTarget "DYMBookReader-DYMBookReader" */;
+			buildConfigurationList = 9E7BF701CD303EEC609BA017AFCCE416 /* Build configuration list for PBXNativeTarget "DYMBookReader" */;
 			buildPhases = (
-				8F2D63F668CCFBF43975EF60E38265F4 /* Sources */,
-				98BB8D9C45F3D4B053BAB931143D43FE /* Frameworks */,
-				4E30F0067378267DD99C5D25B0D8A11E /* Resources */,
+				6B268C28D95A220969CCD87B83AEE001 /* Sources */,
+				692A8865D4F462E40C6DDC4E281BB2A7 /* Frameworks */,
+				3B70165DC505F88DBA7DB62A4F35A389 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D89AA0BF3208AA24AFDF9422A5D1163 /* PBXTargetDependency */,
+				79E57C9C6518A87F72E752F309DFB994 /* PBXTargetDependency */,
+			);
+			name = DYMBookReader;
+			productName = DYMBookReader;
+			productReference = 563E804382FF811F14F1F5DA4FA4D858 /* libDYMBookReader.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		6B25CBEB1DE9B4AF3FDB9230CFB03999 /* Masonry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E744F9B640C50C809CA6EF400DFE216 /* Build configuration list for PBXNativeTarget "Masonry" */;
+			buildPhases = (
+				1724427607F7FEFB73401A8EED45257F /* Sources */,
+				B8713B53DB26AD0A38A52E055530DE33 /* Frameworks */,
+				A5982ACC4F4EBE40CCD0E0122D4DE552 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Masonry;
+			productName = Masonry;
+			productReference = 89A7D06FFBDDFCFBCD23E95E394FBD93 /* libMasonry.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		73D474265843796C7F89ED77BD1F7492 /* DYMBookReader-DYMBookReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1709D7940BB488BBF675A12FD3ABC514 /* Build configuration list for PBXNativeTarget "DYMBookReader-DYMBookReader" */;
+			buildPhases = (
+				8168D18C83E62F827709C5D2F422A4E3 /* Sources */,
+				4E896A6318EE1A6F7783394B73F1152C /* Frameworks */,
+				55C652C50F4178ED66A759B04E14E82A /* Resources */,
 			);
 			buildRules = (
 			);
@@ -365,8 +528,43 @@
 			);
 			name = "DYMBookReader-DYMBookReader";
 			productName = "DYMBookReader-DYMBookReader";
-			productReference = B89D28478F50B76B069A63667BE96918 /* DYMBookReader.bundle */;
+			productReference = BF0BF68A12A81259B46032604308B638 /* DYMBookReader.bundle */;
 			productType = "com.apple.product-type.bundle";
+		};
+		B4D0B725B69100721106132726C07110 /* Pods-DYMBookReader_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DE62CD803EB02227C16A2766C475470 /* Build configuration list for PBXNativeTarget "Pods-DYMBookReader_Tests" */;
+			buildPhases = (
+				577596C1F56371E09F888558DF86E9FD /* Sources */,
+				5F3FD1993EFE42B9E3D74B0CAE8223D1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCDF27DE3807162C0447D52DB0DE2C49 /* PBXTargetDependency */,
+				6F2120F6335522BA5020445D9F7E3A9F /* PBXTargetDependency */,
+			);
+			name = "Pods-DYMBookReader_Tests";
+			productName = "Pods-DYMBookReader_Tests";
+			productReference = 7C434612C88E4481F2C6ECC700E3D316 /* libPods-DYMBookReader_Tests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CF4DC79A187E3210909E310A80E7CC9A /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB2307172295BAAB4909CF8B3E311A30 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				CEEC5E762BAB0B5013D5A40A73FE6E39 /* Sources */,
+				7620C297FF348B54F8471C4548186CEC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE2766BEB0189F9D1FADF6C382E24774 /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = 33355122DF64665DCECEF3433A956545 /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -389,92 +587,136 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				481B909E74AD7E14BD46075E2F8927A3 /* DYMBookReader */,
-				F99D0544165D2F0B88E9FC82CA5C3C5C /* DYMBookReader-DYMBookReader */,
-				D70BA68593B90F4A65EA74F70A7611E7 /* Pods-DYMBookReader_Example */,
-				7D89F6F472859B89BAF1A7ABCA58859B /* Pods-DYMBookReader_Tests */,
+				4376AD07BDCD6421C85A8732C2397EED /* DYMBookReader */,
+				73D474265843796C7F89ED77BD1F7492 /* DYMBookReader-DYMBookReader */,
+				6B25CBEB1DE9B4AF3FDB9230CFB03999 /* Masonry */,
+				CF4DC79A187E3210909E310A80E7CC9A /* Pods */,
+				0272D05818C4773D7ED0453BC4AFC571 /* Pods-DYMBookReader_Example */,
+				B4D0B725B69100721106132726C07110 /* Pods-DYMBookReader_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4E30F0067378267DD99C5D25B0D8A11E /* Resources */ = {
+		55C652C50F4178ED66A759B04E14E82A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A84CD8225D337D778B52A45E90F31AED /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EF433628E7B699C9453DFC0D05384900 /* DYMBookReader.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1141817C677B4FB0A325678DDED273D6 /* Sources */ = {
+		1724427607F7FEFB73401A8EED45257F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3037B826978CB2C35176E0B59EFDC57D /* Pods-DYMBookReader_Example-dummy.m in Sources */,
+				D320E5E12907ED1FE3A72B837E85CC89 /* MASCompositeConstraint.m in Sources */,
+				48F21B511DFF423AE961C7A32A5DFF50 /* MASConstraint.m in Sources */,
+				B929A0401FBF11F9C792CA20809971DC /* MASConstraintMaker.m in Sources */,
+				4946ABB0913E2F73EDD697BAEC25BAC6 /* MASLayoutConstraint.m in Sources */,
+				EDB0AF602D1B33CCAB22BA54F124CE91 /* MASViewAttribute.m in Sources */,
+				B673476F39DD62E5A57EE9F3E22B540A /* MASViewConstraint.m in Sources */,
+				8FF506A6A8E5C3343582BC63492C43D0 /* Masonry-dummy.m in Sources */,
+				7D06646336CB042281735D512C37FB64 /* NSArray+MASAdditions.m in Sources */,
+				59A23A70144DA09237D70CE1F67D57C1 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				A7B501886BB4C5B5E7616EC5D03CF509 /* View+MASAdditions.m in Sources */,
+				798B69B33FFEBAFB7B5DF13E3C02CF18 /* ViewController+MASAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		39B37B55E2DC1E0F45BE4D6285593455 /* Sources */ = {
+		577596C1F56371E09F888558DF86E9FD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D206D6F1510BCBCDEB396686790779D1 /* DYMBookProvider.m in Sources */,
-				9154D10042557000B1B4867643178DB7 /* DYMBookReader-dummy.m in Sources */,
-				EB885AB114B01638712247C4B95C2C66 /* DYMBookReaderViewController.m in Sources */,
-				EAFE480E1BC0294700388431 /* DYMBookPageDatasource.m in Sources */,
+				8494A0BAC4FA2A0AF9ABB534EA123C50 /* Pods-DYMBookReader_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8F2D63F668CCFBF43975EF60E38265F4 /* Sources */ = {
+		6B268C28D95A220969CCD87B83AEE001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21DDF0F029157C0F5512142C3F969B8A /* DYMBookPageDatasource.m in Sources */,
+				13108BAD1010CF732C9EF18AD232E1BD /* DYMBookProvider.m in Sources */,
+				AACC16BD33BDFA4038C61932C1B147F2 /* DYMBookReader-dummy.m in Sources */,
+				17F1467C5E8A1F9EEF8A0BF04D7BE60C /* DYMBookReaderViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8168D18C83E62F827709C5D2F422A4E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F1EE2C85868369B6753336D9A22A62DD /* Sources */ = {
+		857C827978599A26D7C33261951B0EBC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B575E74C368ABA4BA4C0F6822B3CAA60 /* Pods-DYMBookReader_Tests-dummy.m in Sources */,
+				5BFEF60A430E6A2F891405E080801D96 /* Pods-DYMBookReader_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEEC5E762BAB0B5013D5A40A73FE6E39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B5BAA71BFB9CC7B02B3382BE78073BB /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		407B8C2580D4F3BADCF8A59AB9236151 /* PBXTargetDependency */ = {
+		135568316C241D11D60466A8E11C55F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = 6B25CBEB1DE9B4AF3FDB9230CFB03999 /* Masonry */;
+			targetProxy = 176EF067FFC1903F81DD650927A64592 /* PBXContainerItemProxy */;
+		};
+		5D89AA0BF3208AA24AFDF9422A5D1163 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "DYMBookReader-DYMBookReader";
-			target = F99D0544165D2F0B88E9FC82CA5C3C5C /* DYMBookReader-DYMBookReader */;
-			targetProxy = 79E3D12B70F3437A8BB27204C94D6498 /* PBXContainerItemProxy */;
+			target = 73D474265843796C7F89ED77BD1F7492 /* DYMBookReader-DYMBookReader */;
+			targetProxy = 4F45BFB8B2C2583CA1D9F8843FFED7D5 /* PBXContainerItemProxy */;
 		};
-		6FDE4D74032261D9C57401CEEA70A8F5 /* PBXTargetDependency */ = {
+		6F2120F6335522BA5020445D9F7E3A9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = 6B25CBEB1DE9B4AF3FDB9230CFB03999 /* Masonry */;
+			targetProxy = A8D7606B683A1A166A7EE86A8E0A97E7 /* PBXContainerItemProxy */;
+		};
+		7320F43FBAB45E38582C1B8340B4DD0D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DYMBookReader;
-			target = 481B909E74AD7E14BD46075E2F8927A3 /* DYMBookReader */;
-			targetProxy = 76A70CA69745FA4D93089323D8E7B45C /* PBXContainerItemProxy */;
+			target = 4376AD07BDCD6421C85A8732C2397EED /* DYMBookReader */;
+			targetProxy = B4B28C0E7789C830145561F16D02D9B7 /* PBXContainerItemProxy */;
 		};
-		B7F0A61C9B8C0D866B97047EEF371A2A /* PBXTargetDependency */ = {
+		79E57C9C6518A87F72E752F309DFB994 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = 6B25CBEB1DE9B4AF3FDB9230CFB03999 /* Masonry */;
+			targetProxy = 2259D46886E659F3E53D179A227026A4 /* PBXContainerItemProxy */;
+		};
+		BCDF27DE3807162C0447D52DB0DE2C49 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DYMBookReader;
-			target = 481B909E74AD7E14BD46075E2F8927A3 /* DYMBookReader */;
-			targetProxy = 3A3A5452B9E68910094CEBE46BC1A665 /* PBXContainerItemProxy */;
+			target = 4376AD07BDCD6421C85A8732C2397EED /* DYMBookReader */;
+			targetProxy = 75C998C0E640F36483D2A390B40C9FA7 /* PBXContainerItemProxy */;
+		};
+		CE2766BEB0189F9D1FADF6C382E24774 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = 6B25CBEB1DE9B4AF3FDB9230CFB03999 /* Masonry */;
+			targetProxy = 31004CB9581B5C709FF28384B0E47A31 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		03CA91998D6773EC5D02B3DB87B8353E /* Release */ = {
+		052A17875CB827423D627183396CEB60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -501,14 +743,150 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		0B57334D6C23DADAA4F7D802A5760EB2 /* Debug */ = {
+		0977B579A039E46AF6F48AE2745AD8DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 862A1CDC90F26F7F7EE7D2B3841B94F4 /* Masonry-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1388DBDD485B477232B66CFEA98604E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 862A1CDC90F26F7F7EE7D2B3841B94F4 /* Masonry-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3DB280585BDD6833064F59A59B5FA8F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9074EA904EDBC41D815E86E81373F3E /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		41DD5BA028C382FAD4A81404F4422128 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3421831D4BB596D1D179BC2C18835EAE /* DYMBookReader-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DYMBookReader/DYMBookReader-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		469A8A5DD1A4967ECF9DBAE8C519DC4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3421831D4BB596D1D179BC2C18835EAE /* DYMBookReader-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DYMBookReader/DYMBookReader-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		50682E887C6A82DF7E1A1C9F6C0E59B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3421831D4BB596D1D179BC2C18835EAE /* DYMBookReader-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = DYMBookReader;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		5C896D2353426C5B810824E9952956F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D040B6740FECB3DC6614F1DD918B59E9 /* Pods-DYMBookReader_Tests.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		659AF92E7E7D65A0FB665180CA5181C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3421831D4BB596D1D179BC2C18835EAE /* DYMBookReader-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = DYMBookReader;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		771469FDEDED10EACB377EBDE02AF6F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62CA0C3A82C271EDFA5A40CE1D72E443 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -540,215 +918,69 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		1D4DBF3917868966064DE45F1281C699 /* Release */ = {
+		BC106D8E858E014885AFD1CE84D9F4AB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6C9F49585EDA9358E8C143FAF1C46C7 /* DYMBookReader-Private.xcconfig */;
+			baseConfigurationReference = F4F522EC94CD718EDB58479372A91008 /* Pods-DYMBookReader_Example.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = DYMBookReader;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		2566137D9056AF5A70CAA80DBE76CE52 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B719A43E89F9251198E1E056972522FB /* Pods-DYMBookReader_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-DYMBookReader_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-DYMBookReader_Example/Pods-DYMBookReader_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_DYMBookReader_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		39919EBC7C065BF8EEEB8C8FFB395A32 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6C9F49585EDA9358E8C143FAF1C46C7 /* DYMBookReader-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.2.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.2.0;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DYMBookReader/DYMBookReader-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DYMBookReader/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DYMBookReader/DYMBookReader.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = DYMBookReader;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		725F78BC60D0B0CA22F516DC2BCC9180 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6C9F49585EDA9358E8C143FAF1C46C7 /* DYMBookReader-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.2.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.2.0;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DYMBookReader/DYMBookReader-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DYMBookReader/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DYMBookReader/DYMBookReader.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = DYMBookReader;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9A5B4127A974D92FB11AAE98AD2A8C25 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 982BB9475299C06157997FFA765E4899 /* Pods-DYMBookReader_Example.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-DYMBookReader_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-DYMBookReader_Example/Pods-DYMBookReader_Example.modulemap";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_DYMBookReader_Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		B61D899D2B3A6F16AD14A60FE6EDF1E6 /* Release */ = {
+		C1FAC2D64F7E7FBC9B63F55D7DCEFD74 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24E8FDC269C23EC41A54E4EE0740BEE7 /* Pods-DYMBookReader_Tests.release.xcconfig */;
+			baseConfigurationReference = DD8323B0ADC280DB5698FE9EA049871C /* Pods-DYMBookReader_Example.release.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-DYMBookReader_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-DYMBookReader_Tests/Pods-DYMBookReader_Tests.modulemap";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_DYMBookReader_Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		CCAF452380632AB759827493EA4C6123 /* Debug */ = {
+		EEB563FDE8E56BFCC3CE60137A5DBB4B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 59EB5C7BED3B019E21C5E694E8631C28 /* Pods-DYMBookReader_Tests.debug.xcconfig */;
+			baseConfigurationReference = A948E5E13865943AAF4D9AEF67B29310 /* Pods-DYMBookReader_Tests.release.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-DYMBookReader_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-DYMBookReader_Tests/Pods-DYMBookReader_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_DYMBookReader_Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
-		};
-		DA216F6B601461BAB918770834D3301B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6C9F49585EDA9358E8C143FAF1C46C7 /* DYMBookReader-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = DYMBookReader;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		290EBEBDD098683DF4C4332DD3C67A1F /* Build configuration list for PBXNativeTarget "DYMBookReader" */ = {
+		1709D7940BB488BBF675A12FD3ABC514 /* Build configuration list for PBXNativeTarget "DYMBookReader-DYMBookReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				39919EBC7C065BF8EEEB8C8FFB395A32 /* Debug */,
-				725F78BC60D0B0CA22F516DC2BCC9180 /* Release */,
+				50682E887C6A82DF7E1A1C9F6C0E59B4 /* Debug */,
+				659AF92E7E7D65A0FB665180CA5181C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -756,35 +988,53 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0B57334D6C23DADAA4F7D802A5760EB2 /* Debug */,
-				03CA91998D6773EC5D02B3DB87B8353E /* Release */,
+				B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */,
+				052A17875CB827423D627183396CEB60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42B90CA9473AF651EA0489028B770FF3 /* Build configuration list for PBXNativeTarget "DYMBookReader-DYMBookReader" */ = {
+		4E744F9B640C50C809CA6EF400DFE216 /* Build configuration list for PBXNativeTarget "Masonry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DA216F6B601461BAB918770834D3301B /* Debug */,
-				1D4DBF3917868966064DE45F1281C699 /* Release */,
+				0977B579A039E46AF6F48AE2745AD8DB /* Debug */,
+				1388DBDD485B477232B66CFEA98604E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F9ADB559D81DE10F70E42F7A756D205 /* Build configuration list for PBXNativeTarget "Pods-DYMBookReader_Example" */ = {
+		5572A2A19E3D7C2A43424F83A4D8CCA7 /* Build configuration list for PBXNativeTarget "Pods-DYMBookReader_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9A5B4127A974D92FB11AAE98AD2A8C25 /* Debug */,
-				2566137D9056AF5A70CAA80DBE76CE52 /* Release */,
+				BC106D8E858E014885AFD1CE84D9F4AB /* Debug */,
+				C1FAC2D64F7E7FBC9B63F55D7DCEFD74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F134AB736F70319C4C0ABBE196406548 /* Build configuration list for PBXNativeTarget "Pods-DYMBookReader_Tests" */ = {
+		8DE62CD803EB02227C16A2766C475470 /* Build configuration list for PBXNativeTarget "Pods-DYMBookReader_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CCAF452380632AB759827493EA4C6123 /* Debug */,
-				B61D899D2B3A6F16AD14A60FE6EDF1E6 /* Release */,
+				5C896D2353426C5B810824E9952956F4 /* Debug */,
+				EEB563FDE8E56BFCC3CE60137A5DBB4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E7BF701CD303EEC609BA017AFCCE416 /* Build configuration list for PBXNativeTarget "DYMBookReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				469A8A5DD1A4967ECF9DBAE8C519DC4E /* Debug */,
+				41DD5BA028C382FAD4A81404F4422128 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB2307172295BAAB4909CF8B3E311A30 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				771469FDEDED10EACB377EBDE02AF6F7 /* Debug */,
+				3DB280585BDD6833064F59A59B5FA8F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

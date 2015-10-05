@@ -38,4 +38,6 @@ A Shiny Reader for e-book, free to use, still under development.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+
+    s.dependency 'Masonry', '~> 0.6.3'
 end
