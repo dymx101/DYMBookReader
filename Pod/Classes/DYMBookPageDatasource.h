@@ -21,6 +21,8 @@
 
 @property (nonatomic, strong) UIColor   *backgroundColor;
 
+@property (nonatomic, assign) UIEdgeInsets  pageEdgeInset;
+
 -(void)refresh:(dispatch_block_t)block;
 
 -(DYMBookPageVC *)firstPage;

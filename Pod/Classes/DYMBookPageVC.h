@@ -14,6 +14,8 @@
 @property (nonatomic, strong, readonly) NSTextContainer     *textContainer;
 @property (nonatomic, assign, readonly) CGSize              contentSize;
 
--(void)setTextContainer:(NSTextContainer *)textContainer contentSize:(CGSize )contentSize;
+@property (nonatomic, assign, readonly) UIEdgeInsets        pageEdgeInset;
+
+-(void)setTextContainer:(NSTextContainer *)textContainer contentSize:(CGSize )contentSize pageEdgeInset:(UIEdgeInsets)pageEdgeInset;
 
 @end

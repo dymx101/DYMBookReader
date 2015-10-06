@@ -11,6 +11,6 @@
 
 @interface DYMBookPagesCache : NSObject
 
--(DYMBookPageVC *)dequeuePageForContainer:(NSTextContainer *)textContainer contentSize:(CGSize)contentSize;
+-(DYMBookPageVC *)dequeuePageForContainer:(NSTextContainer *)textContainer contentSize:(CGSize)contentSize pageEdgeInset:(UIEdgeInsets)pageEdgeInset;
 
 @end

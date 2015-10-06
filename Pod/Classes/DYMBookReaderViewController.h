@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface DYMBookReaderViewController : UIViewController
-@property (nonatomic, copy) NSString *bookPath;
+@property (nonatomic, copy) NSString *plistFileName;
+
+@property (nonatomic, copy) NSString *customFontName;
+
+@property (nonatomic, assign) UIEdgeInsets  pageEdgeInset;
 
 @end

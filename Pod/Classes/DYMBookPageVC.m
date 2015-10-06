@@ -17,15 +17,16 @@
 
 @implementation DYMBookPageVC
 
--(void)setTextContainer:(NSTextContainer *)textContainer contentSize:(CGSize )contentSize {
+-(void)setTextContainer:(NSTextContainer *)textContainer contentSize:(CGSize )contentSize pageEdgeInset:(UIEdgeInsets)pageEdgeInset {
     
 //    NSLog(@"------begin init Text View...");
     
     _textContainer = textContainer;
     _contentSize = contentSize;
+    _pageEdgeInset = pageEdgeInset;
     
-    CGRect rect = CGRectMake(([UIScreen mainScreen].bounds.size.width - _contentSize.width) / 2
-                             , 20
+    CGRect rect = CGRectMake(_pageEdgeInset.left
+                             , _pageEdgeInset.top
                              , _contentSize.width, _contentSize.height);
     
     _textView = [[DYMBookTextView alloc] initWithFrame:rect textContainer:_textContainer];

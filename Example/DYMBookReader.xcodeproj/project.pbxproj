@@ -24,6 +24,7 @@
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		CFFABB160F89FA9CF6D0903C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 743D914A31DD9A5DD80A6D46 /* libPods.a */; };
 		EA9554821BC3F3D8007B39F0 /* 花千骨.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA9554811BC3F3D8007B39F0 /* 花千骨.plist */; };
+		EA9554911BC42EB0007B39F0 /* FlagBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA9554901BC42EB0007B39F0 /* FlagBlack.ttf */; };
 		EAFE480A1BC0247D00388431 /* demo.txt in Resources */ = {isa = PBXBuildFile; fileRef = EAFE48091BC0247D00388431 /* demo.txt */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		D4533C221A0BFC8E088C6D70 /* Pods-DYMBookReader_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYMBookReader_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYMBookReader_Tests/Pods-DYMBookReader_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D4CAEA4603AFF1C8B0E29461 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		EA9554811BC3F3D8007B39F0 /* 花千骨.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "花千骨.plist"; sourceTree = "<group>"; };
+		EA9554901BC42EB0007B39F0 /* FlagBlack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FlagBlack.ttf; sourceTree = "<group>"; };
 		EAFE48091BC0247D00388431 /* demo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = demo.txt; sourceTree = "<group>"; };
 		F217679129F008DD4D47F3DB /* libPods-DYMBookReader_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DYMBookReader_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -135,6 +137,7 @@
 		6003F593195388D20070C39A /* Example for DYMBookReader */ = {
 			isa = PBXGroup;
 			children = (
+				EA9554901BC42EB0007B39F0 /* FlagBlack.ttf */,
 				6003F59C195388D20070C39A /* DYMAppDelegate.h */,
 				6003F59D195388D20070C39A /* DYMAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -281,6 +284,7 @@
 			files = (
 				EA9554821BC3F3D8007B39F0 /* 花千骨.plist in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				EA9554911BC42EB0007B39F0 /* FlagBlack.ttf in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				EAFE480A1BC0247D00388431 /* demo.txt in Resources */,

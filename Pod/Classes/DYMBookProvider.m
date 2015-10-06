@@ -8,6 +8,7 @@
 
 #import "DYMBookProvider.h"
 
+
 @interface DYMBookProvider ()
 
 @end
@@ -26,8 +27,8 @@
     return str;
 }
 
-+(NSDictionary *)bookWithPlistFilePath:(NSString *)filePath {
-    return [NSDictionary dictionaryWithContentsOfFile:filePath];
++(DYMBook *)bookWithPlistFileName:(NSString *)fileName {
+    return [[DYMBook alloc] initWithPlistFileName:fileName];
 }
 
 @end

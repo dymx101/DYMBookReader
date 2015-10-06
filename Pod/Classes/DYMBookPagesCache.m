@@ -44,7 +44,7 @@ static const NSInteger  MIN_POOL_SIZE = 100;
     _pages = [NSMutableArray arrayWithCapacity:_poolSize];
 }
 
--(DYMBookPageVC *)dequeuePageForContainer:(NSTextContainer *)textContainer contentSize:(CGSize)contentSize {
+-(DYMBookPageVC *)dequeuePageForContainer:(NSTextContainer *)textContainer contentSize:(CGSize)contentSize pageEdgeInset:(UIEdgeInsets)pageEdgeInset {
     
     DYMBookPageVC *resultVC;
     
@@ -57,7 +57,7 @@ static const NSInteger  MIN_POOL_SIZE = 100;
     
     if (resultVC == nil) {
         resultVC = [DYMBookPageVC new];
-        [resultVC setTextContainer:textContainer contentSize:contentSize];
+        [resultVC setTextContainer:textContainer contentSize:contentSize pageEdgeInset:pageEdgeInset];
     }
     
     [_pages removeObject:resultVC];

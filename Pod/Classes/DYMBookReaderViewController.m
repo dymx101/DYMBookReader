@@ -10,6 +10,7 @@
 #import "DYMBookProvider.h"
 #import "DYMBookPageDatasource.h"
 #import "DYMBookPageVC.h"
+#import "DYMBookUtility.h"
 
 #import <Masonry/Masonry.h>
 
@@ -20,9 +21,11 @@
     
     UIPageViewController    *_pageVC;
     
-    NSInteger               _currentIndex;
+    NSInteger               _currentPageIndex;
     
-    NSDictionary            *_bookDic;
+    DYMBook                 *_book;
+    
+    NSUInteger              _bookChapterIndex;
 }
 
 @end
@@ -30,38 +33,60 @@
 
 @implementation DYMBookReaderViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1];
+    self.view.backgroundColor = [UIColor colorWithRed:80/255.0 green:92/255.0 blue:89/255.0 alpha:1];
+    
+    // Page view controller
+    _pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    _pageVC.dataSource = self;
+    _pageVC.delegate = self;
+    _pageVC.view.backgroundColor = self.view.backgroundColor;
+    
+    [self addChildViewController:_pageVC];
+    [self.view addSubview:_pageVC.view];
+    [_pageVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    [_pageVC didMoveToParentViewController:self];
+    
+    
+    // Load the book
+    if (_plistFileName) {
+        
+        _book = [DYMBookProvider bookWithPlistFileName:_plistFileName];
+        
+        __weak typeof(self) weakSelf = self;
+        [_book load:^{
+            [weakSelf loadChapterAtIndex:0];
+        }];
+        
+    }
+}
+
+
+-(void)loadChapterAtIndex:(NSUInteger)index {
+    NSString *chapterContent = [_book chapterContentAtIndex:index];
     
     // Datasource
     _datasource = [DYMBookPageDatasource new];
-    NSString *content;
+    _datasource.content = chapterContent;
+    _datasource.contentSize = CGSizeMake(self.view.frame.size.width - (_pageEdgeInset.left + _pageEdgeInset.right)
+                                         , self.view.frame.size.height - (_pageEdgeInset.top + _pageEdgeInset.bottom));
     
-    if ([_bookPath rangeOfString:@".plist"].location != NSNotFound) {
-        
-        _bookDic = [NSDictionary dictionaryWithContentsOfFile:_bookPath];
-        id chapter = _bookDic[@"chapterArrArr"][0][0];
-        content = chapter[@"chapterContent"];
-        
-    } else if ([_bookPath rangeOfString:@".txt"].location != NSNotFound) {
-        content = [DYMBookProvider bookWithTxtFilePath:_bookPath];
+    if (_customFontName) {
+        _datasource.font = [DYMBookUtility customFontWithFileName:_customFontName Size:16];
+    } else {
+        _datasource.font = [UIFont systemFontOfSize:16];
     }
     
-    if (content == nil) {
-        return;
-    }
+    _datasource.textColor = [UIColor colorWithWhite:0.85 alpha:0.7];
+    _datasource.backgroundColor = self.view.backgroundColor;
+    _datasource.pageEdgeInset = _pageEdgeInset;
     
-    CGSize contentSize = CGSizeMake(self.view.frame.size.width - 20, self.view.frame.size.height - 30);
-    
-    _datasource.content = content;
-    _datasource.contentSize = contentSize;
-    _datasource.font = [UIFont systemFontOfSize:20];
-    _datasource.textColor = [UIColor whiteColor];
-    _datasource.backgroundColor = [UIColor colorWithWhite:0.2 alpha:1];
-    
-    
+    // Refresh datesource
     UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     [self.view addSubview:indicatorView];
     [indicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -73,28 +98,15 @@
         
         [indicatorView removeFromSuperview];
         
-        // Page view controller
-        _pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-        _pageVC.dataSource = self;
-        _pageVC.delegate = self;
-        _pageVC.view.backgroundColor = [UIColor whiteColor];
-        
-        [self addChildViewController:_pageVC];
-        [self.view addSubview:_pageVC.view];
-        [_pageVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.view);
-        }];
-        [_pageVC didMoveToParentViewController:self];
-        
         // first page
         DYMBookPageVC *pageVC = [_datasource firstPage];
         if (pageVC) {
-            
             [_pageVC setViewControllers:@[pageVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
         }
         
     }];
 }
+
 
 #pragma mark -  UIPageViewControllerDataSource
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
@@ -110,7 +122,7 @@
 }
 
 -(DYMBookPageVC *)pageVC:(BOOL)forward {
-    NSInteger index = forward ? _currentIndex + 1 : _currentIndex - 1;
+    NSInteger index = forward ? _currentPageIndex + 1 : _currentPageIndex - 1;
     DYMBookPageVC *vc = [_datasource pageAtIndex:index];
     return vc;
 }
@@ -120,7 +132,7 @@
     
     DYMBookPageVC *vc = pageViewController.viewControllers.firstObject;
     
-    _currentIndex = [_datasource indexOfPageVC:vc];
+    _currentPageIndex = [_datasource indexOfPageVC:vc];
 }
 
 @end

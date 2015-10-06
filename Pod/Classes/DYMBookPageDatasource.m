@@ -8,6 +8,7 @@
 
 #import "DYMBookPageDatasource.h"
 #import "DYMBookPagesCache.h"
+#import "DYMBookUtility.h"
 
 @interface DYMBookPageDatasource () {
     
@@ -48,6 +49,12 @@
         [attributes setObject:_textColor forKey:NSForegroundColorAttributeName];
     }
     
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    [style setLineSpacing:_font.lineHeight * 0.7];
+    [attributes setObject:style forKey:NSParagraphStyleAttributeName];
+    
+    [attributes setObject:@(1.2) forKey:NSKernAttributeName];
+    
     if (attributes.allKeys.count > 0) {
         [attrStr setAttributes:attributes range:NSMakeRange(0, _content.length)];
     }
@@ -58,15 +65,15 @@
     
     
     //
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-      
+    [DYMBookUtility doAsync:^{
+        
         NSRange range = NSMakeRange(0, 0);
         NSUInteger  containerIndex = 0;
         
         NSLog(@"begin add textContainers...");
         while (NSMaxRange(range) < _layoutManager.numberOfGlyphs) {
             
-            CGSize shorterSize = CGSizeMake(_contentSize.width, _contentSize.height - 30);
+            CGSize shorterSize = CGSizeMake(_contentSize.width, _contentSize.height - _font.lineHeight);
             NSTextContainer *container = [[NSTextContainer alloc] initWithSize:shorterSize];
             [_layoutManager addTextContainer:container];
             
@@ -75,20 +82,16 @@
         }
         NSLog(@"end add textContainers...");
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (block) {
-                block();
-            }
-        });
-    });
+    } completion:block];
 }
 
 -(DYMBookPageVC *)firstPage {
     
     NSTextContainer *container = _layoutManager.textContainers.firstObject;
     
-    DYMBookPageVC *vc = [_pagesCache dequeuePageForContainer:container contentSize:_contentSize];
+    DYMBookPageVC *vc = [_pagesCache dequeuePageForContainer:container contentSize:_contentSize pageEdgeInset:_pageEdgeInset];
     vc.view.backgroundColor = _backgroundColor;
+
     return vc;
 }
 
@@ -97,7 +100,7 @@
     if (index >= 0 && index < _layoutManager.textContainers.count) {
         
         NSTextContainer *container = _layoutManager.textContainers[index];
-        DYMBookPageVC *vc = [_pagesCache dequeuePageForContainer:container contentSize:_contentSize];
+        DYMBookPageVC *vc = [_pagesCache dequeuePageForContainer:container contentSize:_contentSize pageEdgeInset:_pageEdgeInset];
         vc.view.backgroundColor = _backgroundColor;
         return vc;
     }

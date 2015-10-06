@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DYMBook.h"
 
 @interface DYMBookProvider : NSObject
 
 +(NSString *)bookWithTxtFilePath:(NSString *)filePath;
 
-+(NSDictionary *)bookWithPlistFilePath:(NSString *)filePath;
++(DYMBook *)bookWithPlistFileName:(NSString *)fileName;
 
 @end
