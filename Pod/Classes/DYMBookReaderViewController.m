@@ -13,6 +13,7 @@
 
 #import <Masonry/Masonry.h>
 
+
 @interface DYMBookReaderViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate> {
     
     DYMBookPageDatasource   *_datasource;
@@ -30,6 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1];
+    
     // Datasource
     _datasource = [DYMBookPageDatasource new];
     NSString *content = [DYMBookProvider loadBookAtURL:_bookURL];
@@ -38,8 +41,20 @@
     _datasource.content = content;
     _datasource.contentSize = contentSize;
     _datasource.font = [UIFont systemFontOfSize:20];
+    _datasource.textColor = [UIColor whiteColor];
+    _datasource.backgroundColor = [UIColor colorWithWhite:0.2 alpha:1];
+    
+    
+    UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [self.view addSubview:indicatorView];
+    [indicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+    }];
+    [indicatorView startAnimating];
     
     [_datasource refresh:^{
+        
+        [indicatorView removeFromSuperview];
         
         // Page view controller
         _pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];

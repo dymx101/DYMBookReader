@@ -19,7 +19,7 @@
 
 -(void)setTextContainer:(NSTextContainer *)textContainer contentSize:(CGSize )contentSize {
     
-    NSLog(@"------begin set Text View...");
+//    NSLog(@"------begin init Text View...");
     
     _textContainer = textContainer;
     _contentSize = contentSize;
@@ -32,7 +32,7 @@
     _textView.editable = NO;
     _textView.scrollEnabled = NO;
     
-    NSLog(@"------end set Text View...");
+//    NSLog(@"------end init Text View...");
 }
 
 

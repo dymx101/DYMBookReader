@@ -17,6 +17,10 @@
 
 @property (nonatomic, strong) UIFont    *font;
 
+@property (nonatomic, strong) UIColor   *textColor;
+
+@property (nonatomic, strong) UIColor   *backgroundColor;
+
 -(void)refresh:(dispatch_block_t)block;
 
 -(DYMBookPageVC *)firstPage;

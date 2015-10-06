@@ -10,7 +10,9 @@
 #import "DYMBookPagesCache.h"
 
 @interface DYMBookPageDatasource () {
+    
     NSTextStorage           *_storage;
+    
     NSLayoutManager         *_layoutManager;
     
     DYMBookPagesCache       *_pagesCache;
@@ -40,6 +42,10 @@
     NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
     if (_font) {
         [attributes setObject:_font forKey:NSFontAttributeName];
+    }
+    
+    if (_textColor) {
+        [attributes setObject:_textColor forKey:NSForegroundColorAttributeName];
     }
     
     if (attributes.allKeys.count > 0) {
@@ -82,7 +88,7 @@
     NSTextContainer *container = _layoutManager.textContainers.firstObject;
     
     DYMBookPageVC *vc = [_pagesCache dequeuePageForContainer:container contentSize:_contentSize];
-    
+    vc.view.backgroundColor = _backgroundColor;
     return vc;
 }
 
@@ -92,7 +98,7 @@
         
         NSTextContainer *container = _layoutManager.textContainers[index];
         DYMBookPageVC *vc = [_pagesCache dequeuePageForContainer:container contentSize:_contentSize];
-        
+        vc.view.backgroundColor = _backgroundColor;
         return vc;
     }
     

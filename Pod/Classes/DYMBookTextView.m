@@ -10,7 +10,6 @@
 
 @implementation DYMBookTextView
 
-
 -(instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer {
     self = [super initWithFrame:frame textContainer:textContainer];
     if (self) {
