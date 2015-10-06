@@ -11,11 +11,13 @@
 
 @interface DYMBookPageDatasource : NSObject
 
-@property (nonatomic, copy, readonly) NSString    *content;
+@property (nonatomic, copy) NSString    *content;
 
-@property (nonatomic, assign, readonly) CGSize    contentSize;
+@property (nonatomic, assign) CGSize    contentSize;
 
--(void)setContent:(NSString *)content withContentSize:(CGSize)contentSize;
+@property (nonatomic, strong) UIFont    *font;
+
+-(void)refresh:(dispatch_block_t)block;
 
 -(DYMBookPageVC *)firstPage;
 

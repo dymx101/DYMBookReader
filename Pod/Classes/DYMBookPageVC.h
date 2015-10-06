@@ -11,6 +11,9 @@
 
 @interface DYMBookPageVC : UIViewController
 
+@property (nonatomic, strong, readonly) NSTextContainer     *textContainer;
+@property (nonatomic, assign, readonly) CGSize              contentSize;
+
 -(void)setTextContainer:(NSTextContainer *)textContainer contentSize:(CGSize )contentSize;
 
 @end

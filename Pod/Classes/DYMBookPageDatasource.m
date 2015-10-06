@@ -7,12 +7,13 @@
 //
 
 #import "DYMBookPageDatasource.h"
+#import "DYMBookPagesCache.h"
 
 @interface DYMBookPageDatasource () {
-    NSTextStorage       *_storage;
-    NSLayoutManager     *_layoutManager;
+    NSTextStorage           *_storage;
+    NSLayoutManager         *_layoutManager;
     
-    NSMutableArray      *_pageVCs;
+    DYMBookPagesCache       *_pagesCache;
 }
 
 
@@ -27,55 +28,79 @@
 {
     self = [super init];
     if (self) {
-        _pageVCs = [NSMutableArray array];
+        _pagesCache = [DYMBookPagesCache new];
     }
     return self;
 }
 
--(void)setContent:(NSString *)content withContentSize:(CGSize)contentSize {
+-(void)refresh:(dispatch_block_t)block {
     
-    _content = content;
-    _contentSize = contentSize;
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:_content];
     
-    _storage = [[NSTextStorage alloc] initWithString:_content];
+    NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+    if (_font) {
+        [attributes setObject:_font forKey:NSFontAttributeName];
+    }
+    
+    if (attributes.allKeys.count > 0) {
+        [attrStr setAttributes:attributes range:NSMakeRange(0, _content.length)];
+    }
+    
+    _storage = [[NSTextStorage alloc] initWithAttributedString:attrStr];
     _layoutManager = [[NSLayoutManager alloc] init];
     [_storage addLayoutManager:_layoutManager];
     
-    //
-    NSRange range = NSMakeRange(0, 0);
-    NSUInteger  containerIndex = 0;
-    [_pageVCs removeAllObjects];
     
-    while (NSMaxRange(range) < _layoutManager.numberOfGlyphs) {
+    //
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+      
+        NSRange range = NSMakeRange(0, 0);
+        NSUInteger  containerIndex = 0;
         
-        CGSize shorterSize = CGSizeMake(_contentSize.width, _contentSize.height - 30);
-        NSTextContainer *container = [[NSTextContainer alloc] initWithSize:shorterSize];
-        [_layoutManager addTextContainer:container];
+        NSLog(@"begin add textContainers...");
+        while (NSMaxRange(range) < _layoutManager.numberOfGlyphs) {
+            
+            CGSize shorterSize = CGSizeMake(_contentSize.width, _contentSize.height - 30);
+            NSTextContainer *container = [[NSTextContainer alloc] initWithSize:shorterSize];
+            [_layoutManager addTextContainer:container];
+            
+            range = [_layoutManager glyphRangeForTextContainer:container];
+            containerIndex++;
+        }
+        NSLog(@"end add textContainers...");
         
-        DYMBookPageVC *pageVC = [DYMBookPageVC new];
-        [pageVC setTextContainer:container contentSize:_contentSize];
-        [_pageVCs addObject:pageVC];
-        
-        range = [_layoutManager glyphRangeForTextContainer:container];
-        containerIndex++;
-    }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (block) {
+                block();
+            }
+        });
+    });
 }
 
 -(DYMBookPageVC *)firstPage {
-    return _pageVCs.firstObject;
+    
+    NSTextContainer *container = _layoutManager.textContainers.firstObject;
+    
+    DYMBookPageVC *vc = [_pagesCache dequeuePageForContainer:container contentSize:_contentSize];
+    
+    return vc;
 }
 
 -(DYMBookPageVC *)pageAtIndex:(NSInteger)index {
     
-    if (index >= 0 && index < _pageVCs.count) {
-        return _pageVCs[index];
+    if (index >= 0 && index < _layoutManager.textContainers.count) {
+        
+        NSTextContainer *container = _layoutManager.textContainers[index];
+        DYMBookPageVC *vc = [_pagesCache dequeuePageForContainer:container contentSize:_contentSize];
+        
+        return vc;
     }
     
     return nil;
 }
 
 -(NSInteger)indexOfPageVC:(DYMBookPageVC *)pageVC {
-    return [_pageVCs indexOfObject:pageVC];
+    return [_layoutManager.textContainers indexOfObject:pageVC.textContainer];
 }
 
 

@@ -14,6 +14,7 @@
 -(instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer {
     self = [super initWithFrame:frame textContainer:textContainer];
     if (self) {
+        self.backgroundColor = [UIColor clearColor];
         self.scrollEnabled = NO;
         self.editable = NO;
         

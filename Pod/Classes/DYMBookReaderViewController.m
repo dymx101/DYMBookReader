@@ -35,27 +35,33 @@
     NSString *content = [DYMBookProvider loadBookAtURL:_bookURL];
     CGSize contentSize = CGSizeMake(self.view.frame.size.width - 20, self.view.frame.size.height - 30);
     
-    [_datasource setContent:content withContentSize:contentSize];
+    _datasource.content = content;
+    _datasource.contentSize = contentSize;
+    _datasource.font = [UIFont systemFontOfSize:20];
     
-    // Page view controller
-    _pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    _pageVC.dataSource = self;
-    _pageVC.delegate = self;
-    _pageVC.view.backgroundColor = [UIColor whiteColor];
-    
-    [self addChildViewController:_pageVC];
-    [self.view addSubview:_pageVC.view];
-    [_pageVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+    [_datasource refresh:^{
+        
+        // Page view controller
+        _pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+        _pageVC.dataSource = self;
+        _pageVC.delegate = self;
+        _pageVC.view.backgroundColor = [UIColor whiteColor];
+        
+        [self addChildViewController:_pageVC];
+        [self.view addSubview:_pageVC.view];
+        [_pageVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.view);
+        }];
+        [_pageVC didMoveToParentViewController:self];
+        
+        // first page
+        DYMBookPageVC *pageVC = [_datasource firstPage];
+        if (pageVC) {
+            
+            [_pageVC setViewControllers:@[pageVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        }
+        
     }];
-    [_pageVC didMoveToParentViewController:self];
-    
-    // first page
-    DYMBookPageVC *pageVC = [_datasource firstPage];
-    if (pageVC) {
-
-        [_pageVC setViewControllers:@[pageVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    }
 }
 
 #pragma mark -  UIPageViewControllerDataSource

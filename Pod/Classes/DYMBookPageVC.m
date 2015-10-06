@@ -13,14 +13,14 @@
     DYMBookTextView      *_textView;
 }
 
-@property (nonatomic, strong, readonly) NSTextContainer     *textContainer;
-@property (nonatomic, assign, readonly) CGSize              contentSize;
-
 @end
 
 @implementation DYMBookPageVC
 
 -(void)setTextContainer:(NSTextContainer *)textContainer contentSize:(CGSize )contentSize {
+    
+    NSLog(@"------begin set Text View...");
+    
     _textContainer = textContainer;
     _contentSize = contentSize;
     
@@ -31,12 +31,14 @@
     _textView = [[DYMBookTextView alloc] initWithFrame:rect textContainer:_textContainer];
     _textView.editable = NO;
     _textView.scrollEnabled = NO;
+    
+    NSLog(@"------end set Text View...");
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
     
     [self.view addSubview:_textView];
 }
