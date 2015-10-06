@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DYMBookReaderViewController : UIViewController
-@property (nonatomic, strong) NSURL *bookURL;
+@property (nonatomic, copy) NSString *bookPath;
+
 @end

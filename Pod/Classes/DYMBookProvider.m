@@ -14,7 +14,7 @@
 
 @implementation DYMBookProvider
 
-+(NSString *)loadBookAtURL:(NSURL *)url {
++(NSString *)bookWithTxtFilePath:(NSString *)filePath {
     
 //    if ([[NSFileManager defaultManager] fileExistsAtPath:url.absoluteString]) {
 //        NSData *data = [NSData dataWithContentsOfFile:url.absoluteString];
@@ -22,10 +22,12 @@
 //    }
     NSError *error;
     
-    NSString *str = [NSString stringWithContentsOfFile:url.absoluteString encoding:NSUTF8StringEncoding error:&error];
+    NSString *str = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
     return str;
 }
 
-
++(NSDictionary *)bookWithPlistFilePath:(NSString *)filePath {
+    return [NSDictionary dictionaryWithContentsOfFile:filePath];
+}
 
 @end

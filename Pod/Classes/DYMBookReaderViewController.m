@@ -21,6 +21,8 @@
     UIPageViewController    *_pageVC;
     
     NSInteger               _currentIndex;
+    
+    NSDictionary            *_bookDic;
 }
 
 @end
@@ -35,7 +37,22 @@
     
     // Datasource
     _datasource = [DYMBookPageDatasource new];
-    NSString *content = [DYMBookProvider loadBookAtURL:_bookURL];
+    NSString *content;
+    
+    if ([_bookPath rangeOfString:@".plist"].location != NSNotFound) {
+        
+        _bookDic = [NSDictionary dictionaryWithContentsOfFile:_bookPath];
+        id chapter = _bookDic[@"chapterArrArr"][0][0];
+        content = chapter[@"chapterContent"];
+        
+    } else if ([_bookPath rangeOfString:@".txt"].location != NSNotFound) {
+        content = [DYMBookProvider bookWithTxtFilePath:_bookPath];
+    }
+    
+    if (content == nil) {
+        return;
+    }
+    
     CGSize contentSize = CGSizeMake(self.view.frame.size.width - 20, self.view.frame.size.height - 30);
     
     _datasource.content = content;

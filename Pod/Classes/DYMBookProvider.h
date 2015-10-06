@@ -10,6 +10,8 @@
 
 @interface DYMBookProvider : NSObject
 
-+(NSString *)loadBookAtURL:(NSURL *)url;
++(NSString *)bookWithTxtFilePath:(NSString *)filePath;
+
++(NSDictionary *)bookWithPlistFilePath:(NSString *)filePath;
 
 @end

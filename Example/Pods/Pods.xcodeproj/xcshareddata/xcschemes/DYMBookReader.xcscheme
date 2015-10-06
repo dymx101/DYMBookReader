@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "170F6D47967CA59BC81D544A"
+               BlueprintIdentifier = "0FA836BC0BA36AB52B63AF26"
                BuildableName = "libDYMBookReader.a"
                BlueprintName = "DYMBookReader"
                ReferencedContainer = "container:Pods.xcodeproj">

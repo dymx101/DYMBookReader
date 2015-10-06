@@ -7,16 +7,16 @@
 //
 
 #import "DYMAppDelegate.h"
-#import <DYMBookReader/DYMBookReaderViewController.h>
+#import "DYMBookReaderViewController.h"
 
 @implementation DYMAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"demo" ofType:@"txt"];
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"demo" ofType:@"txt"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"花千骨" ofType:@"plist"];
     
     DYMBookReaderViewController *vc = (DYMBookReaderViewController *)self.window.rootViewController;
-    vc.bookURL = [NSURL URLWithString:filePath];
+    vc.bookPath = filePath;
     return YES;
 }
 
