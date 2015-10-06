@@ -10,38 +10,35 @@
 #import <Masonry/Masonry.h>
 
 @interface DYMBookPageVC () {
-    UITextView      *_textView;
+    DYMBookTextView      *_textView;
 }
 
-@property (nonatomic, strong) NSTextContainer   *textContainer;
-@property (nonatomic, assign) CGSize            contentSize;
+@property (nonatomic, strong, readonly) NSTextContainer     *textContainer;
+@property (nonatomic, assign, readonly) CGSize              contentSize;
 
 @end
 
 @implementation DYMBookPageVC
 
--(instancetype)initWithTextContainer:(NSTextContainer *)textContainer contentSize:(CGSize )contentSize {
-    self = [super init];
-    if (self) {
-        _textContainer = textContainer;
-        _contentSize = contentSize;
-    }
-    return self;
+-(void)setTextContainer:(NSTextContainer *)textContainer contentSize:(CGSize )contentSize {
+    _textContainer = textContainer;
+    _contentSize = contentSize;
+    
+    CGRect rect = CGRectMake(([UIScreen mainScreen].bounds.size.width - _contentSize.width) / 2
+                             , 20
+                             , _contentSize.width, _contentSize.height);
+    
+    _textView = [[DYMBookTextView alloc] initWithFrame:rect textContainer:_textContainer];
+    _textView.editable = NO;
+    _textView.scrollEnabled = NO;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, _contentSize.width, _contentSize.height) textContainer:_textContainer];
-    _textView.editable = NO;
-    _textView.scrollEnabled = NO;
+    self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:_textView];
-    [_textView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
-        make.height.equalTo(@(_contentSize.height));
-        make.width.equalTo(@(_contentSize.width));
-    }];
 }
 
 

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DYMBookPageVC.h"
 
 @interface DYMBookPageDatasource : NSObject
 
@@ -16,8 +17,10 @@
 
 -(void)setContent:(NSString *)content withContentSize:(CGSize)contentSize;
 
--(NSTextContainer *)navigateToTheBeginning;
+-(DYMBookPageVC *)firstPage;
 
--(NSTextContainer *)navigate:(BOOL)forward;
+-(DYMBookPageVC *)pageAtIndex:(NSInteger)index;
+
+-(NSInteger)indexOfPageVC:(DYMBookPageVC *)pageVC;
 
 @end

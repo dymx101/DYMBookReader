@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DYMBookTextView.h"
 
 @interface DYMBookPageVC : UIViewController
 
--(instancetype)initWithTextContainer:(NSTextContainer *)textContainer contentSize:(CGSize )contentSize;
-
+-(void)setTextContainer:(NSTextContainer *)textContainer contentSize:(CGSize )contentSize;
 
 @end

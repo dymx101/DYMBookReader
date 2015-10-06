@@ -10,31 +10,38 @@
 #import "DYMBookProvider.h"
 #import "DYMBookPageDatasource.h"
 #import "DYMBookPageVC.h"
+
 #import <Masonry/Masonry.h>
 
-@interface DYMBookReaderViewController () <UIPageViewControllerDataSource> {
+@interface DYMBookReaderViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate> {
+    
     DYMBookPageDatasource   *_datasource;
+    
     UIPageViewController    *_pageVC;
+    
+    NSInteger               _currentIndex;
 }
 
 @end
 
 
-#pragma mark -  UIPageViewControllerDataSource
 @implementation DYMBookReaderViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
     
+    // Datasource
     _datasource = [DYMBookPageDatasource new];
     NSString *content = [DYMBookProvider loadBookAtURL:_bookURL];
-    CGSize contentSize = CGRectInset(self.view.frame, 20, 20).size;
+    CGSize contentSize = CGSizeMake(self.view.frame.size.width - 20, self.view.frame.size.height - 30);
+    
     [_datasource setContent:content withContentSize:contentSize];
     
-    _pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    // Page view controller
+    _pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     _pageVC.dataSource = self;
-    _pageVC.view.backgroundColor = [UIColor redColor];
+    _pageVC.delegate = self;
+    _pageVC.view.backgroundColor = [UIColor whiteColor];
     
     [self addChildViewController:_pageVC];
     [self.view addSubview:_pageVC.view];
@@ -43,14 +50,15 @@
     }];
     [_pageVC didMoveToParentViewController:self];
     
-    NSTextContainer *container = [_datasource navigateToTheBeginning];
-    if (container) {
-        DYMBookPageVC *vc = [[DYMBookPageVC alloc] initWithTextContainer:container contentSize:_datasource.contentSize];
-        [_pageVC setViewControllers:@[vc] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    // first page
+    DYMBookPageVC *pageVC = [_datasource firstPage];
+    if (pageVC) {
+
+        [_pageVC setViewControllers:@[pageVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     }
 }
 
-
+#pragma mark -  UIPageViewControllerDataSource
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
       viewControllerBeforeViewController:(UIViewController *)viewController {
     
@@ -64,13 +72,17 @@
 }
 
 -(DYMBookPageVC *)pageVC:(BOOL)forward {
-    NSTextContainer *container = [_datasource navigate:forward];
-    if (container) {
-        DYMBookPageVC *vc = [[DYMBookPageVC alloc] initWithTextContainer:container contentSize:_datasource.contentSize];
-        return vc;
-    }
+    NSInteger index = forward ? _currentIndex + 1 : _currentIndex - 1;
+    DYMBookPageVC *vc = [_datasource pageAtIndex:index];
+    return vc;
+}
+
+#pragma mark - UIPageViewControllerDelegate
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
     
-    return nil;
+    DYMBookPageVC *vc = pageViewController.viewControllers.firstObject;
+    
+    _currentIndex = [_datasource indexOfPageVC:vc];
 }
 
 @end

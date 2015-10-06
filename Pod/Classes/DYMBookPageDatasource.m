@@ -11,7 +11,8 @@
 @interface DYMBookPageDatasource () {
     NSTextStorage       *_storage;
     NSLayoutManager     *_layoutManager;
-    NSInteger           _currentIndex;
+    
+    NSMutableArray      *_pageVCs;
 }
 
 
@@ -21,6 +22,15 @@
 
 
 @implementation DYMBookPageDatasource
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _pageVCs = [NSMutableArray array];
+    }
+    return self;
+}
 
 -(void)setContent:(NSString *)content withContentSize:(CGSize)contentSize {
     
@@ -34,33 +44,38 @@
     //
     NSRange range = NSMakeRange(0, 0);
     NSUInteger  containerIndex = 0;
+    [_pageVCs removeAllObjects];
+    
     while (NSMaxRange(range) < _layoutManager.numberOfGlyphs) {
-        NSTextContainer *container = [[NSTextContainer alloc] initWithSize:_contentSize];
+        
+        CGSize shorterSize = CGSizeMake(_contentSize.width, _contentSize.height - 30);
+        NSTextContainer *container = [[NSTextContainer alloc] initWithSize:shorterSize];
         [_layoutManager addTextContainer:container];
+        
+        DYMBookPageVC *pageVC = [DYMBookPageVC new];
+        [pageVC setTextContainer:container contentSize:_contentSize];
+        [_pageVCs addObject:pageVC];
         
         range = [_layoutManager glyphRangeForTextContainer:container];
         containerIndex++;
     }
-    
-    _currentIndex = 0;
 }
 
--(NSTextContainer *)navigateToTheBeginning {
-    return _layoutManager.textContainers.firstObject;
+-(DYMBookPageVC *)firstPage {
+    return _pageVCs.firstObject;
 }
 
--(NSTextContainer *)navigate:(BOOL)forward {
-    forward ? _currentIndex++ : _currentIndex--;
+-(DYMBookPageVC *)pageAtIndex:(NSInteger)index {
     
-    if (_currentIndex >= 0 && _currentIndex < _layoutManager.textContainers.count) {
-        return _layoutManager.textContainers[_currentIndex];
-    } else if (_currentIndex < 0) {
-        _currentIndex = 0;
-    } else {
-        _currentIndex = _layoutManager.textContainers.count - 1;
+    if (index >= 0 && index < _pageVCs.count) {
+        return _pageVCs[index];
     }
     
     return nil;
+}
+
+-(NSInteger)indexOfPageVC:(DYMBookPageVC *)pageVC {
+    return [_pageVCs indexOfObject:pageVC];
 }
 
 
