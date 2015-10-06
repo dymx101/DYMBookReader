@@ -10,6 +10,14 @@
 
 @interface DYMBookPageDatasource : NSObject
 
-@property (nonatomic, copy) NSString    *content;
-@property (nonatomic, assign) CGSize    contentSize;
+@property (nonatomic, copy, readonly) NSString    *content;
+
+@property (nonatomic, assign, readonly) CGSize    contentSize;
+
+-(void)setContent:(NSString *)content withContentSize:(CGSize)contentSize;
+
+-(NSTextContainer *)navigateToTheBeginning;
+
+-(NSTextContainer *)navigate:(BOOL)forward;
+
 @end

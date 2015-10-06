@@ -8,6 +8,10 @@
 
 #import "DYMBookProvider.h"
 
+@interface DYMBookProvider ()
+
+@end
+
 @implementation DYMBookProvider
 
 +(NSString *)loadBookAtURL:(NSURL *)url {
@@ -21,4 +25,7 @@
     NSString *str = [NSString stringWithContentsOfFile:url.absoluteString encoding:NSUTF8StringEncoding error:&error];
     return str;
 }
+
+
+
 @end

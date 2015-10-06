@@ -11,4 +11,5 @@
 @interface DYMBookProvider : NSObject
 
 +(NSString *)loadBookAtURL:(NSURL *)url;
+
 @end

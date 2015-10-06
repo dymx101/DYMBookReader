@@ -8,10 +8,12 @@
 
 #import "DYMBookReaderViewController.h"
 #import "DYMBookProvider.h"
+#import "DYMBookPageDatasource.h"
+#import "DYMBookPageVC.h"
 #import <Masonry/Masonry.h>
 
 @interface DYMBookReaderViewController () <UIPageViewControllerDataSource> {
-    NSString                *_content;
+    DYMBookPageDatasource   *_datasource;
     UIPageViewController    *_pageVC;
 }
 
@@ -25,7 +27,10 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blueColor];
     
-    _content = [DYMBookProvider loadBookAtURL:_bookURL];
+    _datasource = [DYMBookPageDatasource new];
+    NSString *content = [DYMBookProvider loadBookAtURL:_bookURL];
+    CGSize contentSize = CGRectInset(self.view.frame, 20, 20).size;
+    [_datasource setContent:content withContentSize:contentSize];
     
     _pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     _pageVC.dataSource = self;
@@ -38,27 +43,34 @@
     }];
     [_pageVC didMoveToParentViewController:self];
     
-    [_pageVC setViewControllers:@[[self _randomVC]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    NSTextContainer *container = [_datasource navigateToTheBeginning];
+    if (container) {
+        DYMBookPageVC *vc = [[DYMBookPageVC alloc] initWithTextContainer:container contentSize:_datasource.contentSize];
+        [_pageVC setViewControllers:@[vc] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    }
 }
 
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
       viewControllerBeforeViewController:(UIViewController *)viewController {
     
-    return [self _randomVC];
+    return [self pageVC:YES];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
        viewControllerAfterViewController:(UIViewController *)viewController {
     
-    return [self _randomVC];
+    return [self pageVC:NO];
 }
 
--(UIViewController *)_randomVC {
-    UIViewController *vc = [UIViewController new];
-    vc.view.backgroundColor = [UIColor colorWithWhite:(arc4random() % 128 + 128) / 255.0 alpha:1];
+-(DYMBookPageVC *)pageVC:(BOOL)forward {
+    NSTextContainer *container = [_datasource navigate:forward];
+    if (container) {
+        DYMBookPageVC *vc = [[DYMBookPageVC alloc] initWithTextContainer:container contentSize:_datasource.contentSize];
+        return vc;
+    }
     
-    return vc;
+    return nil;
 }
 
 @end

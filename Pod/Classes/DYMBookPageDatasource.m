@@ -11,22 +11,22 @@
 @interface DYMBookPageDatasource () {
     NSTextStorage       *_storage;
     NSLayoutManager     *_layoutManager;
+    NSUInteger          _currentIndex;
 }
+
+
 
 @end
 
+
+
 @implementation DYMBookPageDatasource
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        [self doInit];
-    }
-    return self;
-}
-
--(void)doInit {
+-(void)setContent:(NSString *)content withContentSize:(CGSize)contentSize {
+    
+    _content = content;
+    _contentSize = contentSize;
+    
     _storage = [[NSTextStorage alloc] initWithString:_content];
     _layoutManager = [[NSLayoutManager alloc] init];
     [_storage addLayoutManager:_layoutManager];
@@ -41,6 +41,22 @@
         range = [_layoutManager glyphRangeForTextContainer:container];
         containerIndex++;
     }
+    
+    _currentIndex = 0;
+}
+
+-(NSTextContainer *)navigateToTheBeginning {
+    return _layoutManager.textContainers.firstObject;
+}
+
+-(NSTextContainer *)navigate:(BOOL)forward {
+    forward ? _currentIndex++ : _currentIndex--;
+    
+    if (_currentIndex < _layoutManager.textContainers.count) {
+        return _layoutManager.textContainers[_currentIndex];
+    }
+    
+    return nil;
 }
 
 
