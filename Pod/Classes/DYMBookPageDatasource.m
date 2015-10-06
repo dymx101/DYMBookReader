@@ -11,7 +11,7 @@
 @interface DYMBookPageDatasource () {
     NSTextStorage       *_storage;
     NSLayoutManager     *_layoutManager;
-    NSUInteger          _currentIndex;
+    NSInteger           _currentIndex;
 }
 
 
@@ -52,8 +52,12 @@
 -(NSTextContainer *)navigate:(BOOL)forward {
     forward ? _currentIndex++ : _currentIndex--;
     
-    if (_currentIndex < _layoutManager.textContainers.count) {
+    if (_currentIndex >= 0 && _currentIndex < _layoutManager.textContainers.count) {
         return _layoutManager.textContainers[_currentIndex];
+    } else if (_currentIndex < 0) {
+        _currentIndex = 0;
+    } else {
+        _currentIndex = _layoutManager.textContainers.count - 1;
     }
     
     return nil;

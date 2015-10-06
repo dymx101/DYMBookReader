@@ -32,8 +32,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _textView = [[UITextView alloc] initWithFrame:CGRectZero textContainer:_textContainer];
+    _textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, _contentSize.width, _contentSize.height) textContainer:_textContainer];
     _textView.editable = NO;
+    _textView.scrollEnabled = NO;
     
     [self.view addSubview:_textView];
     [_textView mas_makeConstraints:^(MASConstraintMaker *make) {

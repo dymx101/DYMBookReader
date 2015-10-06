@@ -54,13 +54,13 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
       viewControllerBeforeViewController:(UIViewController *)viewController {
     
-    return [self pageVC:YES];
+    return [self pageVC:NO];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
        viewControllerAfterViewController:(UIViewController *)viewController {
     
-    return [self pageVC:NO];
+    return [self pageVC:YES];
 }
 
 -(DYMBookPageVC *)pageVC:(BOOL)forward {
