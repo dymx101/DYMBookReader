@@ -143,7 +143,7 @@
 }
 
 -(NSString *)timeStringWithDateComponents:(NSDateComponents *)comp {
-    return [NSString stringWithFormat:@"%02d:%02d", comp.hour, comp.minute];
+    return [NSString stringWithFormat:@"%02ld:%02ld", comp.hour, comp.minute];
 }
 
 @end

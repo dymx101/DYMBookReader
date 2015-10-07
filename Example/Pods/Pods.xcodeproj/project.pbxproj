@@ -17,7 +17,7 @@
 		2D273D24F1CA8D0F04D644A254443244 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 484627A85B4EB936A9708BD8BEDEFA17 /* MASViewConstraint.m */; };
 		2DADDB36A1E15F307B489832AFEC2F2C /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = CA52D4502F0783FA933D011F5BC693D0 /* MASCompositeConstraint.h */; };
 		3C5A520C6A698FB971523B97F2EC6DE8 /* DYMBookProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = BC1CD6A51166E63FB5FD2FAA48581758 /* DYMBookProvider.h */; };
-		42A1FC21A3435BA192EEA4BB6736CDC8 /* DYMBookPageDatasource.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A7E3FBD32D1D4B5D362FA07BE0933C6 /* DYMBookPageDatasource.h */; };
+		42A1FC21A3435BA192EEA4BB6736CDC8 /* DYMBookChapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A7E3FBD32D1D4B5D362FA07BE0933C6 /* DYMBookChapter.h */; };
 		47C2EF02B1EB75458391C44C6FD3EBBA /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 216386595E182C73B58B0700F30ED529 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		4DB89F01BA09B3BA459BF5788183D69B /* DYMBookTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = EB77F221736D8EEE1EEBADA8AB9B9906 /* DYMBookTextView.h */; };
 		5208ECF56510082496855099A9406316 /* DYMBookPagesCache.h in Headers */ = {isa = PBXBuildFile; fileRef = A277E7FFE7F3A92FD9DDC8337356A9E7 /* DYMBookPagesCache.h */; };
@@ -58,8 +58,10 @@
 		EA95548A1BC41003007B39F0 /* DYMBookUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9554881BC41003007B39F0 /* DYMBookUtility.m */; };
 		EAB80DCB1BC4CA8C007636D2 /* DYMBookTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = EAB80DC91BC4CA8C007636D2 /* DYMBookTimer.h */; };
 		EAB80DCC1BC4CA8C007636D2 /* DYMBookTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB80DCA1BC4CA8C007636D2 /* DYMBookTimer.m */; };
+		EAB80DCF1BC4F6B1007636D2 /* DYMBookPageStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = EAB80DCD1BC4F6B1007636D2 /* DYMBookPageStyle.h */; };
+		EAB80DD01BC4F6B1007636D2 /* DYMBookPageStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB80DCE1BC4F6B1007636D2 /* DYMBookPageStyle.m */; };
 		F33336DB5B712FC0C765921D621FB5E4 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E4172E17A9B1D8BC3BA6E0C728A099 /* NSArray+MASAdditions.m */; };
-		F68C33D0B7754939A5669F34000DD758 /* DYMBookPageDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4B2E5B471B57AF13828D84DF2F0DE6 /* DYMBookPageDatasource.m */; };
+		F68C33D0B7754939A5669F34000DD758 /* DYMBookChapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4B2E5B471B57AF13828D84DF2F0DE6 /* DYMBookChapter.m */; };
 		FA3CBD96271087075E07999047D9981B /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 534632EAEC32EC286A8907B06A4677C1 /* MASLayoutConstraint.m */; };
 /* End PBXBuildFile section */
 
@@ -126,7 +128,7 @@
 		216386595E182C73B58B0700F30ED529 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		29D34CE2228F844C907C2D903D65CA2F /* DYMBookReader-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DYMBookReader-prefix.pch"; sourceTree = "<group>"; };
 		2A0C7E976D762C09DB19107E93B0FBDF /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2A7E3FBD32D1D4B5D362FA07BE0933C6 /* DYMBookPageDatasource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DYMBookPageDatasource.h; sourceTree = "<group>"; };
+		2A7E3FBD32D1D4B5D362FA07BE0933C6 /* DYMBookChapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DYMBookChapter.h; sourceTree = "<group>"; };
 		2E69499243F85F35217C06A11665278D /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
 		308F3BCF040037B0060F24718B434BDE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		33355122DF64665DCECEF3433A956545 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +151,7 @@
 		6B9565EB935BA46400BD36578C65DAB6 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		6BCDB36A5E5DA33816C1BFF77A5F9D08 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		78851D7F409F4930DA8A01562878D04E /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
-		7B4B2E5B471B57AF13828D84DF2F0DE6 /* DYMBookPageDatasource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DYMBookPageDatasource.m; sourceTree = "<group>"; };
+		7B4B2E5B471B57AF13828D84DF2F0DE6 /* DYMBookChapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DYMBookChapter.m; sourceTree = "<group>"; };
 		7BA2B56482C8E9414BC0F626001C25BE /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
 		7C434612C88E4481F2C6ECC700E3D316 /* libPods-DYMBookReader_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DYMBookReader_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86B88A028C35B152A4BAA6D4653FAF9A /* DYMBookReaderViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DYMBookReaderViewController.m; sourceTree = "<group>"; };
@@ -186,6 +188,8 @@
 		EAB7E8C72A630E5A90FCD68D83675113 /* Pods-DYMBookReader_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DYMBookReader_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EAB80DC91BC4CA8C007636D2 /* DYMBookTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYMBookTimer.h; sourceTree = "<group>"; };
 		EAB80DCA1BC4CA8C007636D2 /* DYMBookTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYMBookTimer.m; sourceTree = "<group>"; };
+		EAB80DCD1BC4F6B1007636D2 /* DYMBookPageStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYMBookPageStyle.h; sourceTree = "<group>"; };
+		EAB80DCE1BC4F6B1007636D2 /* DYMBookPageStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYMBookPageStyle.m; sourceTree = "<group>"; };
 		EB77F221736D8EEE1EEBADA8AB9B9906 /* DYMBookTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DYMBookTextView.h; sourceTree = "<group>"; };
 		EDA6A5BA89E45D2751A9300ED4A3F562 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
 		F0CCF1F2739CF4B89FCABC7DFE059191 /* DYMBookPageVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DYMBookPageVC.m; sourceTree = "<group>"; };
@@ -283,8 +287,8 @@
 		3A65765FC0560E21909594979160A86E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2A7E3FBD32D1D4B5D362FA07BE0933C6 /* DYMBookPageDatasource.h */,
-				7B4B2E5B471B57AF13828D84DF2F0DE6 /* DYMBookPageDatasource.m */,
+				2A7E3FBD32D1D4B5D362FA07BE0933C6 /* DYMBookChapter.h */,
+				7B4B2E5B471B57AF13828D84DF2F0DE6 /* DYMBookChapter.m */,
 				667633F038EFE0C0977AD4FDCB635A2E /* DYMBookPageVC.h */,
 				F0CCF1F2739CF4B89FCABC7DFE059191 /* DYMBookPageVC.m */,
 				A277E7FFE7F3A92FD9DDC8337356A9E7 /* DYMBookPagesCache.h */,
@@ -301,6 +305,8 @@
 				EA9554881BC41003007B39F0 /* DYMBookUtility.m */,
 				EAB80DC91BC4CA8C007636D2 /* DYMBookTimer.h */,
 				EAB80DCA1BC4CA8C007636D2 /* DYMBookTimer.m */,
+				EAB80DCD1BC4F6B1007636D2 /* DYMBookPageStyle.h */,
+				EAB80DCE1BC4F6B1007636D2 /* DYMBookPageStyle.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -466,7 +472,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA9554851BC40992007B39F0 /* DYMBook.h in Headers */,
-				42A1FC21A3435BA192EEA4BB6736CDC8 /* DYMBookPageDatasource.h in Headers */,
+				EAB80DCF1BC4F6B1007636D2 /* DYMBookPageStyle.h in Headers */,
+				42A1FC21A3435BA192EEA4BB6736CDC8 /* DYMBookChapter.h in Headers */,
 				B8CF977C0559BF4C5E1DB43F34EE8D0B /* DYMBookPageVC.h in Headers */,
 				EAB80DCB1BC4CA8C007636D2 /* DYMBookTimer.h in Headers */,
 				5208ECF56510082496855099A9406316 /* DYMBookPagesCache.h in Headers */,
@@ -654,8 +661,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F68C33D0B7754939A5669F34000DD758 /* DYMBookPageDatasource.m in Sources */,
+				F68C33D0B7754939A5669F34000DD758 /* DYMBookChapter.m in Sources */,
 				EAB80DCC1BC4CA8C007636D2 /* DYMBookTimer.m in Sources */,
+				EAB80DD01BC4F6B1007636D2 /* DYMBookPageStyle.m in Sources */,
 				EA9554861BC40992007B39F0 /* DYMBook.m in Sources */,
 				8A098CB32036345A55367E54A284894C /* DYMBookPageVC.m in Sources */,
 				EA95548A1BC41003007B39F0 /* DYMBookUtility.m in Sources */,

@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "DYMBookPageVC.h"
+#import "DYMBookPageStyle.h"
 
-@interface DYMBookPageDatasource : NSObject
+@interface DYMBookChapter : NSObject
 
 @property (nonatomic, copy) NSString    *bookName;
 
@@ -19,13 +20,10 @@
 
 @property (nonatomic, assign) CGSize    contentSize;
 
-@property (nonatomic, strong) UIFont    *font;
+@property (nonatomic, assign) NSUInteger   currentPageIndex;
 
-@property (nonatomic, strong) UIColor   *textColor;
+@property (nonatomic, strong) DYMBookPageStyle    *pageStyle;
 
-@property (nonatomic, strong) UIColor   *backgroundColor;
-
-@property (nonatomic, assign) UIEdgeInsets  pageEdgeInset;
 
 -(void)refresh:(dispatch_block_t)block;
 
@@ -34,5 +32,7 @@
 -(DYMBookPageVC *)pageAtIndex:(NSInteger)index;
 
 -(NSInteger)indexOfPageVC:(DYMBookPageVC *)pageVC;
+
+-(void)didShowPageVC:(DYMBookPageVC *)pageVC;
 
 @end

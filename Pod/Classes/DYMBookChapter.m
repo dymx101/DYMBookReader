@@ -6,35 +6,24 @@
 //
 //
 
-#import "DYMBookPageDatasource.h"
+#import "DYMBookChapter.h"
 #import "DYMBookPagesCache.h"
 #import "DYMBookUtility.h"
 
-@interface DYMBookPageDatasource () {
+@interface DYMBookChapter () {
     
     NSTextStorage           *_storage;
     
     NSLayoutManager         *_layoutManager;
     
     DYMBookPagesCache       *_pagesCache;
-    
-    UIFont                  *_subFont;
 }
-
-
 
 @end
 
 
 
-@implementation DYMBookPageDatasource
-
--(void)setFont:(UIFont *)font {
-    _font = font;
-    if (_font) {
-        _subFont = [UIFont fontWithName:_font.fontName size:_font.pointSize * 0.7];
-    }
-}
+@implementation DYMBookChapter
 
 - (instancetype)init
 {
@@ -50,17 +39,19 @@
     NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:_content];
     
     NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
-    if (_font) {
-        [attributes setObject:_font forKey:NSFontAttributeName];
+    
+    if (_pageStyle.font) {
+        [attributes setObject:_pageStyle.font forKey:NSFontAttributeName];
+        
+        NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+        [style setLineSpacing:_pageStyle.font.lineHeight * 0.7];
+        [attributes setObject:style forKey:NSParagraphStyleAttributeName];
     }
     
-    if (_textColor) {
-        [attributes setObject:_textColor forKey:NSForegroundColorAttributeName];
+    if (_pageStyle.textColor) {
+        [attributes setObject:_pageStyle.textColor forKey:NSForegroundColorAttributeName];
     }
     
-    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-    [style setLineSpacing:_font.lineHeight * 0.7];
-    [attributes setObject:style forKey:NSParagraphStyleAttributeName];
     
     [attributes setObject:@(1.2) forKey:NSKernAttributeName];
     
@@ -82,7 +73,7 @@
         NSLog(@"begin add textContainers...");
         while (NSMaxRange(range) < _layoutManager.numberOfGlyphs) {
             
-            CGSize shorterSize = CGSizeMake(_contentSize.width, _contentSize.height - _font.lineHeight);
+            CGSize shorterSize = CGSizeMake(_contentSize.width, _contentSize.height - _pageStyle.font.lineHeight);
             NSTextContainer *container = [[NSTextContainer alloc] initWithSize:shorterSize];
             [_layoutManager addTextContainer:container];
             
@@ -104,10 +95,13 @@
     if (index >= 0 && index < _layoutManager.textContainers.count) {
         
         NSTextContainer *container = _layoutManager.textContainers[index];
-        DYMBookPageVC *vc = [_pagesCache dequeuePageForContainer:container contentSize:_contentSize pageEdgeInset:_pageEdgeInset];
-        [vc setBookName:_bookName chapterTitle:_chapterTitle currentIndex:index totoalPageCount:_layoutManager.textContainers.count font:_subFont textColor:_textColor];
+        DYMBookPageVC *vc = [_pagesCache dequeuePageForContainer:container contentSize:_contentSize pageEdgeInset:_pageStyle.pageEdgeInset];
         
-        vc.view.backgroundColor = _backgroundColor;
+        [vc setBookName:_bookName chapterTitle:_chapterTitle
+           currentIndex:index totoalPageCount:_layoutManager.textContainers.count
+                   font:_pageStyle.subFont textColor:_pageStyle.textColor];
+        
+        vc.view.backgroundColor = _pageStyle.backgroundColor;
         
         return vc;
     }
@@ -119,5 +113,8 @@
     return [_layoutManager.textContainers indexOfObject:pageVC.textContainer];
 }
 
+-(void)didShowPageVC:(DYMBookPageVC *)pageVC {
+    _currentPageIndex = [self indexOfPageVC:pageVC];
+}
 
 @end

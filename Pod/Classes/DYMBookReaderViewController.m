@@ -8,7 +8,7 @@
 
 #import "DYMBookReaderViewController.h"
 #import "DYMBookProvider.h"
-#import "DYMBookPageDatasource.h"
+#import "DYMBookChapter.h"
 #import "DYMBookPageVC.h"
 #import "DYMBookUtility.h"
 #import "DYMBookTimer.h"
@@ -18,17 +18,19 @@
 
 @interface DYMBookReaderViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate> {
     
-    DYMBookPageDatasource   *_datasource;
+    DYMBookChapter          *_currentChapter;
     
     UIPageViewController    *_pageVC;
     
-    NSInteger               _currentPageIndex;
+//    NSInteger               _currentPageIndex;
     
     DYMBook                 *_book;
     
     NSUInteger              _bookChapterIndex;
     
     DYMBookTimer            *_bookTimer;
+    
+    DYMBookPageStyle        *_pageStyle;
 }
 
 @end
@@ -44,10 +46,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    /// Timer
     _bookTimer = [DYMBookTimer new];
     [_bookTimer start];
     
     self.view.backgroundColor = [UIColor colorWithRed:80/255.0 green:92/255.0 blue:89/255.0 alpha:1];
+    
+    // Page Style
+    _pageStyle = [DYMBookPageStyle new];
+    if (_customFontName) {
+        _pageStyle.font = [DYMBookUtility customFontWithFileName:_customFontName Size:16];
+    } else {
+        _pageStyle.font = [UIFont systemFontOfSize:16];
+    }
+    
+    _pageStyle.textColor = [UIColor colorWithWhite:0.85 alpha:0.7];
+    _pageStyle.backgroundColor = self.view.backgroundColor;
+    _pageStyle.pageEdgeInset = _pageEdgeInset;
+    
     
     // Page view controller
     _pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
@@ -86,23 +102,15 @@
     NSString *chapterContent = [_book chapterContentAtIndex:index];
     
     // Datasource
-    _datasource = [DYMBookPageDatasource new];
-    _datasource.content = chapterContent;
-    _datasource.bookName = _book.data[@"title"];
-    _datasource.chapterTitle = [_book chapterTitleAtIndex:index];
+    _currentChapter = [DYMBookChapter new];
+    _currentChapter.content = chapterContent;
+    _currentChapter.bookName = _book.data[@"title"];
+    _currentChapter.chapterTitle = [_book chapterTitleAtIndex:index];
     
-    _datasource.contentSize = CGSizeMake(self.view.frame.size.width - (_pageEdgeInset.left + _pageEdgeInset.right)
+    _currentChapter.contentSize = CGSizeMake(self.view.frame.size.width - (_pageEdgeInset.left + _pageEdgeInset.right)
                                          , self.view.frame.size.height - (_pageEdgeInset.top + _pageEdgeInset.bottom));
     
-    if (_customFontName) {
-        _datasource.font = [DYMBookUtility customFontWithFileName:_customFontName Size:16];
-    } else {
-        _datasource.font = [UIFont systemFontOfSize:16];
-    }
-    
-    _datasource.textColor = [UIColor colorWithWhite:0.85 alpha:0.7];
-    _datasource.backgroundColor = self.view.backgroundColor;
-    _datasource.pageEdgeInset = _pageEdgeInset;
+    _currentChapter.pageStyle = _pageStyle;
     
     // Refresh datesource
     UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -112,12 +120,12 @@
     }];
     [indicatorView startAnimating];
     
-    [_datasource refresh:^{
+    [_currentChapter refresh:^{
         
         [indicatorView removeFromSuperview];
         
         // first page
-        DYMBookPageVC *pageVC = [_datasource firstPage];
+        DYMBookPageVC *pageVC = [_currentChapter firstPage];
         if (pageVC) {
             [_pageVC setViewControllers:@[pageVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
         }
@@ -140,17 +148,24 @@
 }
 
 -(DYMBookPageVC *)pageVC:(BOOL)forward {
-    NSInteger index = forward ? _currentPageIndex + 1 : _currentPageIndex - 1;
-    DYMBookPageVC *vc = [_datasource pageAtIndex:index];
+    NSInteger index = forward ? _currentChapter.currentPageIndex + 1 : _currentChapter.currentPageIndex - 1;
+    DYMBookPageVC *vc = [_currentChapter pageAtIndex:index];
     return vc;
 }
 
 #pragma mark - UIPageViewControllerDelegate
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers {
+    DYMBookPageVC *vc = pendingViewControllers.firstObject;
+    NSLog(@"Will show: %@", [vc valueForKey:@"_currentIndex"]);
+}
+
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
     
     DYMBookPageVC *vc = pageViewController.viewControllers.firstObject;
     
-    _currentPageIndex = [_datasource indexOfPageVC:vc];
+    [_currentChapter didShowPageVC:vc];
+    
+    NSLog(@"Did show:%@", @(_currentChapter.currentPageIndex));
 }
 
 @end
