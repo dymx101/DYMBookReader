@@ -36,6 +36,14 @@
 
 -(void)refresh:(dispatch_block_t)block {
     
+    if (_status == kDYMBookChapterRefreshing) {
+        if (block) {
+            block();
+        }
+        return;
+    }
+    _status = kDYMBookChapterRefreshing;
+    
     NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:_content];
     
     NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
@@ -73,7 +81,7 @@
         NSLog(@"begin add textContainers...");
         while (NSMaxRange(range) < _layoutManager.numberOfGlyphs) {
             
-            CGSize shorterSize = CGSizeMake(_contentSize.width, _contentSize.height - _pageStyle.font.lineHeight);
+            CGSize shorterSize = CGSizeMake(_pageStyle.contentSize.width, _pageStyle.contentSize.height - _pageStyle.font.lineHeight);
             NSTextContainer *container = [[NSTextContainer alloc] initWithSize:shorterSize];
             [_layoutManager addTextContainer:container];
             
@@ -82,7 +90,14 @@
         }
         NSLog(@"end add textContainers...");
         
-    } completion:block];
+    } completion:^{
+        
+        _status = kDYMBookChapterReady;
+        
+        if (block) {
+            block();
+        }
+    }];
 }
 
 -(DYMBookPageVC *)firstPage {
@@ -95,7 +110,7 @@
     if (index >= 0 && index < _layoutManager.textContainers.count) {
         
         NSTextContainer *container = _layoutManager.textContainers[index];
-        DYMBookPageVC *vc = [_pagesCache dequeuePageForContainer:container contentSize:_contentSize pageEdgeInset:_pageStyle.pageEdgeInset];
+        DYMBookPageVC *vc = [_pagesCache dequeuePageForContainer:container contentSize:_pageStyle.contentSize pageEdgeInset:_pageStyle.pageEdgeInset];
         
         [vc setBookName:_bookName chapterTitle:_chapterTitle
            currentIndex:index totoalPageCount:_layoutManager.textContainers.count

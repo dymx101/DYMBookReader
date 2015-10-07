@@ -17,6 +17,8 @@
 @property (nonatomic, strong)               UIColor   *textColor;
 /// Page background color
 @property (nonatomic, strong)               UIColor   *backgroundColor;
+
+@property (nonatomic, assign)               CGSize    contentSize;
 /// Insets around page's four edges
 @property (nonatomic, assign)               UIEdgeInsets  pageEdgeInset;
 

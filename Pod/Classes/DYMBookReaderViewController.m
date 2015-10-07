@@ -12,25 +12,26 @@
 #import "DYMBookPageVC.h"
 #import "DYMBookUtility.h"
 #import "DYMBookTimer.h"
+#import "DYMBookDataSource.h"
 
 #import <Masonry/Masonry.h>
 
 
 @interface DYMBookReaderViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate> {
     
-    DYMBookChapter          *_currentChapter;
+//    DYMBookChapter          *_currentChapter;
     
     UIPageViewController    *_pageVC;
     
-//    NSInteger               _currentPageIndex;
-    
-    DYMBook                 *_book;
+//    DYMBook                 *_book;
     
     NSUInteger              _bookChapterIndex;
     
     DYMBookTimer            *_bookTimer;
     
     DYMBookPageStyle        *_pageStyle;
+    
+    DYMBookDataSource       *_dateSource;
 }
 
 @end
@@ -63,6 +64,8 @@
     _pageStyle.textColor = [UIColor colorWithWhite:0.85 alpha:0.7];
     _pageStyle.backgroundColor = self.view.backgroundColor;
     _pageStyle.pageEdgeInset = _pageEdgeInset;
+    _pageStyle.contentSize = CGSizeMake(self.view.frame.size.width - (_pageEdgeInset.left + _pageEdgeInset.right)
+                                                      , self.view.frame.size.height - (_pageEdgeInset.top + _pageEdgeInset.bottom));
     
     
     // Page view controller
@@ -82,13 +85,18 @@
     // Load the book
     if (_plistFileName) {
         
-        _book = [DYMBookProvider bookWithPlistFileName:_plistFileName];
+        _dateSource = [[DYMBookDataSource alloc] initWithPlistFileName:_plistFileName pageStyle:_pageStyle];
         
         __weak typeof(self) weakSelf = self;
-        [_book load:^{
-            [weakSelf loadChapterAtIndex:0];
+        [_dateSource load:^{
+            __strong typeof(self) strongSelf = weakSelf;
+            // first page
+            DYMBookPageVC *pageVC = [[strongSelf->_dateSource currentChapter] firstPage];
+            if (pageVC) {
+                [_pageVC setViewControllers:@[pageVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+            }
+            
         }];
-        
     }
 }
 
@@ -96,42 +104,6 @@
     return YES;
 }
 
-
--(void)loadChapterAtIndex:(NSUInteger)index {
-    
-    NSString *chapterContent = [_book chapterContentAtIndex:index];
-    
-    // Datasource
-    _currentChapter = [DYMBookChapter new];
-    _currentChapter.content = chapterContent;
-    _currentChapter.bookName = _book.data[@"title"];
-    _currentChapter.chapterTitle = [_book chapterTitleAtIndex:index];
-    
-    _currentChapter.contentSize = CGSizeMake(self.view.frame.size.width - (_pageEdgeInset.left + _pageEdgeInset.right)
-                                         , self.view.frame.size.height - (_pageEdgeInset.top + _pageEdgeInset.bottom));
-    
-    _currentChapter.pageStyle = _pageStyle;
-    
-    // Refresh datesource
-    UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    [self.view addSubview:indicatorView];
-    [indicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
-    }];
-    [indicatorView startAnimating];
-    
-    [_currentChapter refresh:^{
-        
-        [indicatorView removeFromSuperview];
-        
-        // first page
-        DYMBookPageVC *pageVC = [_currentChapter firstPage];
-        if (pageVC) {
-            [_pageVC setViewControllers:@[pageVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-        }
-        
-    }];
-}
 
 
 #pragma mark -  UIPageViewControllerDataSource
@@ -148,8 +120,9 @@
 }
 
 -(DYMBookPageVC *)pageVC:(BOOL)forward {
-    NSInteger index = forward ? _currentChapter.currentPageIndex + 1 : _currentChapter.currentPageIndex - 1;
-    DYMBookPageVC *vc = [_currentChapter pageAtIndex:index];
+    DYMBookChapter *currentChapter = [_dateSource currentChapter];
+    NSInteger index = forward ? currentChapter.currentPageIndex + 1 : currentChapter.currentPageIndex - 1;
+    DYMBookPageVC *vc = [currentChapter pageAtIndex:index];
     return vc;
 }
 
@@ -163,9 +136,7 @@
     
     DYMBookPageVC *vc = pageViewController.viewControllers.firstObject;
     
-    [_currentChapter didShowPageVC:vc];
-    
-    NSLog(@"Did show:%@", @(_currentChapter.currentPageIndex));
+    [[_dateSource currentChapter] didShowPageVC:vc];
 }
 
 @end
