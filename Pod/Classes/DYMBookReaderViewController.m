@@ -17,7 +17,8 @@
 #import <Masonry/Masonry.h>
 
 
-@interface DYMBookReaderViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate> {
+@interface DYMBookReaderViewController ()
+<UIPageViewControllerDataSource, UIPageViewControllerDelegate> {
     
 //    DYMBookChapter          *_currentChapter;
     
@@ -69,18 +70,16 @@
     
     
     // Page view controller
-    _pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    _pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     _pageVC.dataSource = self;
     _pageVC.delegate = self;
     _pageVC.view.backgroundColor = self.view.backgroundColor;
-    
     [self addChildViewController:_pageVC];
     [self.view addSubview:_pageVC.view];
     [_pageVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
     [_pageVC didMoveToParentViewController:self];
-    
     
     // Load the book
     if (_plistFileName) {
@@ -105,31 +104,38 @@
 }
 
 
-
 #pragma mark -  UIPageViewControllerDataSource
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
       viewControllerBeforeViewController:(UIViewController *)viewController {
     
-    return [self pageVC:NO];
+    DYMBookPageVC *vc = [self pageVC:NO];
+    
+//    NSLog(@"Before:--->%@", vc);
+    
+    return vc;
+
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
        viewControllerAfterViewController:(UIViewController *)viewController {
     
-    return [self pageVC:YES];
+    DYMBookPageVC *vc = [self pageVC:YES];
+
+//    NSLog(@"After:--->%@", vc);
+    
+    return vc;
 }
 
 -(DYMBookPageVC *)pageVC:(BOOL)forward {
-    DYMBookChapter *currentChapter = [_dateSource currentChapter];
-    NSInteger index = forward ? currentChapter.currentPageIndex + 1 : currentChapter.currentPageIndex - 1;
-    DYMBookPageVC *vc = [currentChapter pageAtIndex:index];
-    return vc;
+    
+    return [_dateSource getPage:forward];
+
 }
 
 #pragma mark - UIPageViewControllerDelegate
 - (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers {
-    DYMBookPageVC *vc = pendingViewControllers.firstObject;
-    NSLog(@"Will show: %@", [vc valueForKey:@"_currentIndex"]);
+//    DYMBookPageVC *vc = pendingViewControllers.firstObject;
+//    NSLog(@"Will show: %@", [vc valueForKey:@"_currentIndex"]);
 }
 
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
@@ -137,6 +143,8 @@
     DYMBookPageVC *vc = pageViewController.viewControllers.firstObject;
     
     [[_dateSource currentChapter] didShowPageVC:vc];
+    
+//    NSLog(@"Current:--->%@", vc);
 }
 
 @end

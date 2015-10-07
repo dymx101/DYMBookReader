@@ -21,6 +21,6 @@
 
 -(DYMBookChapter *)currentChapter;
 
--(void)navigate:(BOOL)forward completion:(dispatch_block_t)completion;
+-(DYMBookPageVC *)getPage:(BOOL)forward;
 
 @end

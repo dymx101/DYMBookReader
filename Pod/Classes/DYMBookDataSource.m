@@ -15,7 +15,7 @@
     DYMBook             *_book;
     NSMutableArray      *_chapters;
     
-    NSUInteger          _currentChapterIndex;
+    NSInteger          _currentChapterIndex;
 }
 
 @end
@@ -93,13 +93,42 @@
     return chapter;
 }
 
--(void)navigate:(BOOL)forward completion:(dispatch_block_t)completion {
+-(DYMBookPageVC *)getPage:(BOOL)forward {
+    DYMBookChapter *currentChapter = [self currentChapter];
+    NSInteger index = forward ? currentChapter.currentPageIndex + 1 : currentChapter.currentPageIndex - 1;
+    DYMBookPageVC *vc = [currentChapter pageAtIndex:index];
+    
+    if (vc == nil) {
+        vc = [self navigate:forward completion:nil];
+    }
+    
+    return vc;
+}
+
+-(DYMBookPageVC *)navigate:(BOOL)forward completion:(dispatch_block_t)completion {
+    
     forward ? _currentChapterIndex++ : _currentChapterIndex--;
     
-    _currentChapterIndex = MIN(_currentChapterIndex, _chapters.count - 1);
-    _currentChapterIndex = MAX(_currentChapterIndex, 0);
+    NSInteger lastIndex = _chapters.count - 1;
+    if (_currentChapterIndex > lastIndex) {
+        _currentChapterIndex = lastIndex;
+        return nil;
+    } else if (_currentChapterIndex < 0) {
+        _currentChapterIndex = 0;
+        return nil;
+    }
+    
+    DYMBookPageVC *pageVC;
+    
+    if (forward) {
+        pageVC = [[self currentChapter] goToFirstPage];
+    } else {
+        pageVC = [[self currentChapter] goToLastPage];
+    }
     
     [self preloadChapters:completion];
+    
+    return pageVC;
 }
 
 -(void)preloadChapters:(dispatch_block_t)completion {

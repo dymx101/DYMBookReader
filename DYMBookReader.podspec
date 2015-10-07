@@ -40,4 +40,5 @@ A Shiny Reader for e-book, free to use, still under development.
   # s.dependency 'AFNetworking', '~> 2.3'
 
     s.dependency 'Masonry', '~> 0.6.3'
+    s.dependency 'SCPageViewController', '~> 2.0.2'
 end

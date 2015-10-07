@@ -72,7 +72,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleTimeChanged:) name:DYM_NOTIFICATION_MINUTE_CHANGED object:nil];
     
@@ -144,6 +143,10 @@
 
 -(NSString *)timeStringWithDateComponents:(NSDateComponents *)comp {
     return [NSString stringWithFormat:@"%02ld:%02ld", comp.hour, comp.minute];
+}
+
+-(NSString *)description {
+    return [NSString stringWithFormat:@"<%@> - Book:%@, Chapter:%@, CurrentIndex:%@", NSStringFromClass([self class]), _bookName, _chapterTitle, @(_currentIndex)];
 }
 
 @end

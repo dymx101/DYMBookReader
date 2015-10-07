@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, EDYMBookChapterStatus) {
 
 @property (nonatomic, copy) NSString    *chapterTitle;
 
-@property (nonatomic, copy) NSString    *content;
+@property (nonatomic, strong) NSString    *content;
 
 @property (nonatomic, assign) NSUInteger   currentPageIndex;
 
@@ -40,5 +40,11 @@ typedef NS_ENUM(NSInteger, EDYMBookChapterStatus) {
 -(NSInteger)indexOfPageVC:(DYMBookPageVC *)pageVC;
 
 -(void)didShowPageVC:(DYMBookPageVC *)pageVC;
+
+-(DYMBookPageVC *)goToFirstPage;
+
+-(DYMBookPageVC *)goToLastPage;
+
+-(DYMBookPageVC *)goToIndex:(NSUInteger)index;
 
 @end

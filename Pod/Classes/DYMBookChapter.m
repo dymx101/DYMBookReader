@@ -129,7 +129,27 @@
 }
 
 -(void)didShowPageVC:(DYMBookPageVC *)pageVC {
-    _currentPageIndex = [self indexOfPageVC:pageVC];
+    NSUInteger index = [self indexOfPageVC:pageVC];
+    [self goToIndex:index];
+}
+
+-(DYMBookPageVC *)goToFirstPage {
+    return [self goToIndex:0];
+}
+
+-(DYMBookPageVC *)goToLastPage {
+    return [self goToIndex:_layoutManager.textContainers.count - 1];
+}
+
+-(DYMBookPageVC *)goToIndex:(NSUInteger)index {
+    
+    if (index < _layoutManager.textContainers.count) {
+        _currentPageIndex = index;
+        
+        return [self pageAtIndex:index];
+    }
+    
+    return nil;
 }
 
 @end
