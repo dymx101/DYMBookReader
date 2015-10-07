@@ -10,6 +10,9 @@
 
 @interface DYMBook : NSObject
 
+@property (nonatomic, strong) NSDictionary    *data;
+
+
 -(instancetype)initWithPlistFileName:(NSString *)plistFileName;
 
 -(void)load:(dispatch_block_t)completionBlock;

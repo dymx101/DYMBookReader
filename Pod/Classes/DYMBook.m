@@ -10,7 +10,6 @@
 #import "DYMBookUtility.h"
 
 @interface DYMBook () {
-    NSDictionary    *_data;
     NSString        *_plistFileName;
 }
 

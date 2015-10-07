@@ -17,6 +17,8 @@
     NSLayoutManager         *_layoutManager;
     
     DYMBookPagesCache       *_pagesCache;
+    
+    UIFont                  *_subFont;
 }
 
 
@@ -26,6 +28,13 @@
 
 
 @implementation DYMBookPageDatasource
+
+-(void)setFont:(UIFont *)font {
+    _font = font;
+    if (_font) {
+        _subFont = [UIFont fontWithName:_font.fontName size:_font.pointSize * 0.7];
+    }
+}
 
 - (instancetype)init
 {
@@ -87,12 +96,7 @@
 
 -(DYMBookPageVC *)firstPage {
     
-    NSTextContainer *container = _layoutManager.textContainers.firstObject;
-    
-    DYMBookPageVC *vc = [_pagesCache dequeuePageForContainer:container contentSize:_contentSize pageEdgeInset:_pageEdgeInset];
-    vc.view.backgroundColor = _backgroundColor;
-
-    return vc;
+    return [self pageAtIndex:0];
 }
 
 -(DYMBookPageVC *)pageAtIndex:(NSInteger)index {
@@ -101,7 +105,10 @@
         
         NSTextContainer *container = _layoutManager.textContainers[index];
         DYMBookPageVC *vc = [_pagesCache dequeuePageForContainer:container contentSize:_contentSize pageEdgeInset:_pageEdgeInset];
+        [vc setBookName:_bookName chapterTitle:_chapterTitle currentIndex:index totoalPageCount:_layoutManager.textContainers.count font:_subFont textColor:_textColor];
+        
         vc.view.backgroundColor = _backgroundColor;
+        
         return vc;
     }
     

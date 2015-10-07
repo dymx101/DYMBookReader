@@ -18,4 +18,11 @@
 
 -(void)setTextContainer:(NSTextContainer *)textContainer contentSize:(CGSize )contentSize pageEdgeInset:(UIEdgeInsets)pageEdgeInset;
 
+-(void)setBookName:(NSString *)bookName
+       chapterTitle:(NSString *)chapterTitle
+      currentIndex:(NSUInteger)currentIndex
+   totoalPageCount:(NSUInteger)totoalPageCount
+              font:(UIFont *)font
+         textColor:(UIColor *)textColor;
+
 @end

@@ -11,6 +11,7 @@
 #import "DYMBookPageDatasource.h"
 #import "DYMBookPageVC.h"
 #import "DYMBookUtility.h"
+#import "DYMBookTimer.h"
 
 #import <Masonry/Masonry.h>
 
@@ -26,6 +27,8 @@
     DYMBook                 *_book;
     
     NSUInteger              _bookChapterIndex;
+    
+    DYMBookTimer            *_bookTimer;
 }
 
 @end
@@ -33,9 +36,16 @@
 
 @implementation DYMBookReaderViewController
 
+-(void)dealloc {
+    [_bookTimer stop];
+    _bookTimer = nil;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _bookTimer = [DYMBookTimer new];
+    [_bookTimer start];
     
     self.view.backgroundColor = [UIColor colorWithRed:80/255.0 green:92/255.0 blue:89/255.0 alpha:1];
     
@@ -66,13 +76,21 @@
     }
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 
 -(void)loadChapterAtIndex:(NSUInteger)index {
+    
     NSString *chapterContent = [_book chapterContentAtIndex:index];
     
     // Datasource
     _datasource = [DYMBookPageDatasource new];
     _datasource.content = chapterContent;
+    _datasource.bookName = _book.data[@"title"];
+    _datasource.chapterTitle = [_book chapterTitleAtIndex:index];
+    
     _datasource.contentSize = CGSizeMake(self.view.frame.size.width - (_pageEdgeInset.left + _pageEdgeInset.right)
                                          , self.view.frame.size.height - (_pageEdgeInset.top + _pageEdgeInset.bottom));
     

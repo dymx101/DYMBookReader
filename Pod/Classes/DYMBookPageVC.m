@@ -7,11 +7,30 @@
 //
 
 #import "DYMBookPageVC.h"
+#import "DYMBookTimer.h"
 #import <Masonry/Masonry.h>
 
 @interface DYMBookPageVC () {
     DYMBookTextView      *_textView;
+    
+    UILabel              *_lblBookName;
+    UILabel              *_lblChapterTitle;
+    UILabel              *_lblProgress;
+    UILabel              *_lblTime;
+
 }
+
+@property (nonatomic, copy) NSString        *bookName;
+
+@property (nonatomic, copy) NSString        *chapterTitle;
+
+@property (nonatomic, assign) NSUInteger    currentIndex;
+
+@property (nonatomic, assign) NSUInteger    totalPageCount;
+
+@property (nonatomic, strong) UIFont        *font;
+
+@property (nonatomic, strong) UIColor       *textColor;
 
 @end
 
@@ -36,14 +55,95 @@
 //    NSLog(@"------end init Text View...");
 }
 
+-(void)setBookName:(NSString *)bookName
+       chapterTitle:(NSString *)chapterTitle
+      currentIndex:(NSUInteger)currentIndex
+   totoalPageCount:(NSUInteger)totoalPageCount
+              font:(UIFont *)font
+         textColor:(UIColor *)textColor {
+    
+    _bookName = bookName;
+    _chapterTitle = chapterTitle;
+    _currentIndex = currentIndex;
+    _totalPageCount = totoalPageCount;
+    _font = font;
+    _textColor = textColor;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleTimeChanged:) name:DYM_NOTIFICATION_MINUTE_CHANGED object:nil];
+    
     [self.view addSubview:_textView];
+    
+    // Sub titles
+    CGFloat alpha = 0.75;
+    _lblBookName = [UILabel new];
+    _lblBookName.alpha = alpha;
+    _lblBookName.font = _font;
+    _lblBookName.textColor = _textColor;
+    _lblBookName.text = [NSString stringWithFormat:@"《%@》", _bookName];
+    
+    _lblChapterTitle = [UILabel new];
+    _lblChapterTitle.alpha = alpha;
+    _lblChapterTitle.font = _font;
+    _lblChapterTitle.textColor = _textColor;
+    _lblChapterTitle.text = _chapterTitle;
+    _lblChapterTitle.textAlignment = NSTextAlignmentRight;
+    
+    _lblProgress = [UILabel new];
+    _lblProgress.alpha = alpha;
+    _lblProgress.font = _font;
+    _lblProgress.textColor = _textColor;
+    _lblProgress.text = [NSString stringWithFormat:@"%@ / %@", @(_currentIndex + 1), @(_totalPageCount)];
+    
+    _lblTime = [UILabel new];
+    _lblTime.alpha = alpha;
+    _lblTime.font = _font;
+    _lblTime.textColor = _textColor;
+    _lblTime.text = [self timeStringWithDateComponents:[DYMBookTimer dateComponentsForNow]];
+    _lblTime.textAlignment = NSTextAlignmentRight;
+    
+    [self.view addSubview:_lblBookName];
+    [_lblBookName mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self.view.mas_leading).offset(_pageEdgeInset.left + 5);
+        make.bottom.equalTo(_textView.mas_top).offset(-5);
+    }];
+    
+    [self.view addSubview:_lblProgress];
+    [_lblProgress mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self.view.mas_leading).offset(_pageEdgeInset.left + 5);
+        make.top.equalTo(_textView.mas_bottom).offset(5);
+        make.width.equalTo(@80);
+    }];
+    
+    [self.view addSubview:_lblChapterTitle];
+    [_lblChapterTitle mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.equalTo(self.view.mas_trailing).offset(-(_pageEdgeInset.right + 5));
+        make.baseline.equalTo(_lblProgress.mas_baseline);
+        make.leading.equalTo(_lblProgress.mas_trailing).offset(20);
+    }];
+    
+    [self.view addSubview:_lblTime];
+    [_lblTime mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.equalTo(self.view.mas_trailing).offset(-(_pageEdgeInset.right + 5));
+        make.baseline.equalTo(_lblBookName.mas_baseline);
+        make.leading.equalTo(_lblBookName.mas_trailing).offset(20);
+    }];
 }
 
 
+-(void)handleTimeChanged:(NSNotification *)notification {
+    NSDateComponents *comp = notification.object;
+    if ([comp isKindOfClass:[NSDateComponents class]]) {
+        _lblTime.text = [self timeStringWithDateComponents:comp];
+    }
+}
+
+-(NSString *)timeStringWithDateComponents:(NSDateComponents *)comp {
+    return [NSString stringWithFormat:@"%02d:%02d", comp.hour, comp.minute];
+}
 
 @end

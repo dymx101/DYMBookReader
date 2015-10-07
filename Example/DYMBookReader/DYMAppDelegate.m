@@ -17,7 +17,7 @@
     DYMBookReaderViewController *vc = (DYMBookReaderViewController *)self.window.rootViewController;
     vc.plistFileName = @"花千骨";
     vc.customFontName = @"FlagBlack";
-    vc.pageEdgeInset = UIEdgeInsetsMake(20, 20, 10, 10);
+    vc.pageEdgeInset = UIEdgeInsetsMake(30, 20, 30, 10);
     
     return YES;
 }

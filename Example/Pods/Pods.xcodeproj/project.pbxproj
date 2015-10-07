@@ -56,6 +56,8 @@
 		EA9554861BC40992007B39F0 /* DYMBook.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9554841BC40992007B39F0 /* DYMBook.m */; };
 		EA9554891BC41003007B39F0 /* DYMBookUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = EA9554871BC41003007B39F0 /* DYMBookUtility.h */; };
 		EA95548A1BC41003007B39F0 /* DYMBookUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9554881BC41003007B39F0 /* DYMBookUtility.m */; };
+		EAB80DCB1BC4CA8C007636D2 /* DYMBookTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = EAB80DC91BC4CA8C007636D2 /* DYMBookTimer.h */; };
+		EAB80DCC1BC4CA8C007636D2 /* DYMBookTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB80DCA1BC4CA8C007636D2 /* DYMBookTimer.m */; };
 		F33336DB5B712FC0C765921D621FB5E4 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E4172E17A9B1D8BC3BA6E0C728A099 /* NSArray+MASAdditions.m */; };
 		F68C33D0B7754939A5669F34000DD758 /* DYMBookPageDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4B2E5B471B57AF13828D84DF2F0DE6 /* DYMBookPageDatasource.m */; };
 		FA3CBD96271087075E07999047D9981B /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 534632EAEC32EC286A8907B06A4677C1 /* MASLayoutConstraint.m */; };
@@ -182,6 +184,8 @@
 		EA9554871BC41003007B39F0 /* DYMBookUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYMBookUtility.h; sourceTree = "<group>"; };
 		EA9554881BC41003007B39F0 /* DYMBookUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYMBookUtility.m; sourceTree = "<group>"; };
 		EAB7E8C72A630E5A90FCD68D83675113 /* Pods-DYMBookReader_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DYMBookReader_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EAB80DC91BC4CA8C007636D2 /* DYMBookTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYMBookTimer.h; sourceTree = "<group>"; };
+		EAB80DCA1BC4CA8C007636D2 /* DYMBookTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYMBookTimer.m; sourceTree = "<group>"; };
 		EB77F221736D8EEE1EEBADA8AB9B9906 /* DYMBookTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = DYMBookTextView.h; sourceTree = "<group>"; };
 		EDA6A5BA89E45D2751A9300ED4A3F562 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
 		F0CCF1F2739CF4B89FCABC7DFE059191 /* DYMBookPageVC.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = DYMBookPageVC.m; sourceTree = "<group>"; };
@@ -295,6 +299,8 @@
 				EA9554841BC40992007B39F0 /* DYMBook.m */,
 				EA9554871BC41003007B39F0 /* DYMBookUtility.h */,
 				EA9554881BC41003007B39F0 /* DYMBookUtility.m */,
+				EAB80DC91BC4CA8C007636D2 /* DYMBookTimer.h */,
+				EAB80DCA1BC4CA8C007636D2 /* DYMBookTimer.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 				EA9554851BC40992007B39F0 /* DYMBook.h in Headers */,
 				42A1FC21A3435BA192EEA4BB6736CDC8 /* DYMBookPageDatasource.h in Headers */,
 				B8CF977C0559BF4C5E1DB43F34EE8D0B /* DYMBookPageVC.h in Headers */,
+				EAB80DCB1BC4CA8C007636D2 /* DYMBookTimer.h in Headers */,
 				5208ECF56510082496855099A9406316 /* DYMBookPagesCache.h in Headers */,
 				3C5A520C6A698FB971523B97F2EC6DE8 /* DYMBookProvider.h in Headers */,
 				E5F471BCFBEAC77E614F4A6D94E6A898 /* DYMBookReaderViewController.h in Headers */,
@@ -648,6 +655,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F68C33D0B7754939A5669F34000DD758 /* DYMBookPageDatasource.m in Sources */,
+				EAB80DCC1BC4CA8C007636D2 /* DYMBookTimer.m in Sources */,
 				EA9554861BC40992007B39F0 /* DYMBook.m in Sources */,
 				8A098CB32036345A55367E54A284894C /* DYMBookPageVC.m in Sources */,
 				EA95548A1BC41003007B39F0 /* DYMBookUtility.m in Sources */,
