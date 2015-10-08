@@ -70,7 +70,7 @@
     
     
     // Page view controller
-    _pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    _pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     _pageVC.dataSource = self;
     _pageVC.delegate = self;
     _pageVC.view.backgroundColor = self.view.backgroundColor;
@@ -133,15 +133,16 @@
 }
 
 #pragma mark - UIPageViewControllerDelegate
-- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers {
+//- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers {
 //    DYMBookPageVC *vc = pendingViewControllers.firstObject;
 //    NSLog(@"Will show: %@", [vc valueForKey:@"_currentIndex"]);
-}
+//}
 
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
     
     DYMBookPageVC *vc = pageViewController.viewControllers.firstObject;
     
+    [_dateSource setCurrentChapter:vc.chapter];
     [[_dateSource currentChapter] didShowPageVC:vc];
     
 //    NSLog(@"Current:--->%@", vc);

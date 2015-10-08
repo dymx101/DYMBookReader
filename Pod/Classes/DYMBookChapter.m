@@ -112,11 +112,13 @@
         NSTextContainer *container = _layoutManager.textContainers[index];
         DYMBookPageVC *vc = [_pagesCache dequeuePageForContainer:container contentSize:_pageStyle.contentSize pageEdgeInset:_pageStyle.pageEdgeInset];
         
+        vc.chapter = self;
         [vc setBookName:_bookName chapterTitle:_chapterTitle
            currentIndex:index totoalPageCount:_layoutManager.textContainers.count
                    font:_pageStyle.subFont textColor:_pageStyle.textColor];
         
         vc.view.backgroundColor = _pageStyle.backgroundColor;
+//        vc.view.backgroundColor = [UIColor blackColor]; // for debug
         
         return vc;
     }
@@ -125,11 +127,13 @@
 }
 
 -(NSInteger)indexOfPageVC:(DYMBookPageVC *)pageVC {
+//    NSLog(@"textContainers:%@", _layoutManager.textContainers);
     return [_layoutManager.textContainers indexOfObject:pageVC.textContainer];
 }
 
 -(void)didShowPageVC:(DYMBookPageVC *)pageVC {
     NSUInteger index = [self indexOfPageVC:pageVC];
+//    NSLog(@"go to index:%ld, page-currentIndex:%ld", index, pageVC.currentIndex);
     [self goToIndex:index];
 }
 

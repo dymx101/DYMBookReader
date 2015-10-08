@@ -24,8 +24,6 @@
 
 @property (nonatomic, copy) NSString        *chapterTitle;
 
-@property (nonatomic, assign) NSUInteger    currentIndex;
-
 @property (nonatomic, assign) NSUInteger    totalPageCount;
 
 @property (nonatomic, strong) UIFont        *font;
@@ -142,7 +140,7 @@
 }
 
 -(NSString *)timeStringWithDateComponents:(NSDateComponents *)comp {
-    return [NSString stringWithFormat:@"%02ld:%02ld", comp.hour, comp.minute];
+    return [NSString stringWithFormat:@"%02ld:%02ld", (long)comp.hour, (long)comp.minute];
 }
 
 -(NSString *)description {

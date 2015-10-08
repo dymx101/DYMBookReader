@@ -87,10 +87,29 @@
     }
 }
 
+-(void)setCurrentChapter:(DYMBookChapter *)currentChapter {
+    NSUInteger index = [_chapters indexOfObject:currentChapter];
+    if (index != NSNotFound) {
+        _currentChapterIndex = index;
+    }
+}
+
 -(DYMBookChapter *)currentChapter {
-    DYMBookChapter *chapter = _chapters[_currentChapterIndex];
+    return [self chapterAtIndex:_currentChapterIndex];
+}
+
+-(DYMBookChapter *)chapterAtIndex:(NSInteger)index {
     
-    return chapter;
+    if (_chapters.count > 0) {
+        index = MAX(0, index);
+        index = MIN(_chapters.count - 1, index);
+        
+        DYMBookChapter *chapter = _chapters[index];
+        
+        return chapter;
+    }
+    
+    return nil;
 }
 
 -(DYMBookPageVC *)getPage:(BOOL)forward {
@@ -107,39 +126,37 @@
 
 -(DYMBookPageVC *)navigate:(BOOL)forward completion:(dispatch_block_t)completion {
     
-    forward ? _currentChapterIndex++ : _currentChapterIndex--;
+    NSInteger index = forward ? _currentChapterIndex + 1 : _currentChapterIndex - 1;
     
     NSInteger lastIndex = _chapters.count - 1;
-    if (_currentChapterIndex > lastIndex) {
-        _currentChapterIndex = lastIndex;
+    if (index > lastIndex) {
         return nil;
-    } else if (_currentChapterIndex < 0) {
-        _currentChapterIndex = 0;
+    } else if (index < 0) {
         return nil;
     }
     
     DYMBookPageVC *pageVC;
     
     if (forward) {
-        pageVC = [[self currentChapter] goToFirstPage];
+        pageVC = [[self chapterAtIndex:index] goToFirstPage];
     } else {
-        pageVC = [[self currentChapter] goToLastPage];
+        pageVC = [[self chapterAtIndex:index] goToLastPage];
     }
     
-    [self preloadChapters:completion];
+    [self preloadChaptersAtIndex:index completion:completion];
     
     return pageVC;
 }
 
--(void)preloadChapters:(dispatch_block_t)completion {
-    [self loadChapterAtIndex:_currentChapterIndex completion:^{
+-(void)preloadChaptersAtIndex:(NSUInteger)index completion:(dispatch_block_t)completion {
+    [self loadChapterAtIndex:index completion:^{
         
         if (completion) {
             completion();
         }
         
-        [self loadChapterAtIndex:_currentChapterIndex + 1 completion:nil];
-        [self loadChapterAtIndex:_currentChapterIndex - 1 completion:nil];
+        [self loadChapterAtIndex:index + 1 completion:nil];
+        [self loadChapterAtIndex:index - 1 completion:nil];
     }];
 
 }

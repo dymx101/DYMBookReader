@@ -14,6 +14,7 @@
     self = [super initWithFrame:frame textContainer:textContainer];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
+//        self.backgroundColor = [UIColor colorWithWhite:0.3 alpha:1]; // for debug
         self.scrollEnabled = NO;
         self.editable = NO;
         

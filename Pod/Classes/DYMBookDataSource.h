@@ -15,11 +15,11 @@
 @property (nonatomic, strong, readonly) DYMBookPageStyle        *pageStyle;
 @property (nonatomic, copy, readonly) NSString                  *plistFileName;
 
+@property (nonatomic, strong)       DYMBookChapter              *currentChapter;
+
 -(instancetype)initWithPlistFileName:(NSString *)plistFileName pageStyle:(DYMBookPageStyle *)pageStyle;
 
 -(void)load:(dispatch_block_t)completionBlock;
-
--(DYMBookChapter *)currentChapter;
 
 -(DYMBookPageVC *)getPage:(BOOL)forward;
 

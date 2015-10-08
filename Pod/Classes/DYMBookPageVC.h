@@ -14,7 +14,11 @@
 @property (nonatomic, strong, readonly) NSTextContainer     *textContainer;
 @property (nonatomic, assign, readonly) CGSize              contentSize;
 
+@property (nonatomic, assign, readonly) NSUInteger          currentIndex;
+
 @property (nonatomic, assign, readonly) UIEdgeInsets        pageEdgeInset;
+
+@property (nonatomic, weak) id chapter;
 
 -(void)setTextContainer:(NSTextContainer *)textContainer contentSize:(CGSize )contentSize pageEdgeInset:(UIEdgeInsets)pageEdgeInset;
 
