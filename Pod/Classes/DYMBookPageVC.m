@@ -10,7 +10,7 @@
 #import "DYMBookTimer.h"
 #import <Masonry/Masonry.h>
 
-@interface DYMBookPageVC () {
+@interface DYMBookPageVC () <UIGestureRecognizerDelegate> {
     DYMBookTextView      *_textView;
     
     UILabel              *_lblBookName;
@@ -129,9 +129,47 @@
         make.baseline.equalTo(_lblBookName.mas_baseline);
         make.leading.equalTo(_lblBookName.mas_trailing).offset(20);
     }];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
+    tap.delegate = self;
+    [self.view addGestureRecognizer:tap];
 }
 
+#pragma mark -tap
+-(void)tapped:(UITapGestureRecognizer *)tap {
+    CGPoint location = [tap locationInView:self.view];
+    EDYMBookPageArea area = [self pageAreaWithLocation:location];
+//    NSLog(@"Tapped Begin: %@", NSStringFromCGPoint(location));
+    
+    if (_pageTapHandler) {
+        _pageTapHandler(area, self);
+    }
+}
 
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    CGPoint location = [gestureRecognizer locationInView:self.view];
+    EDYMBookPageArea area = [self pageAreaWithLocation:location];
+    
+    if (_transitionStyle == UIPageViewControllerTransitionStylePageCurl
+        && (area == kDYMBookPageAreaLeft || area == kDYMBookPageAreaRight)) {
+        return NO;
+    }
+    
+    return YES;
+}
+
+-(EDYMBookPageArea)pageAreaWithLocation:(CGPoint)location {
+    CGFloat pageWidth = CGRectGetWidth(self.view.frame);
+    if (location.x < pageWidth * 0.25) {
+        return kDYMBookPageAreaLeft;
+    } else if (location.x > pageWidth * 0.75) {
+        return kDYMBookPageAreaRight;
+    }
+    
+    return kDYMBookPageAreaMiddle;
+}
+
+#pragma mark - timer
 -(void)handleTimeChanged:(NSNotification *)notification {
     NSDateComponents *comp = notification.object;
     if ([comp isKindOfClass:[NSDateComponents class]]) {

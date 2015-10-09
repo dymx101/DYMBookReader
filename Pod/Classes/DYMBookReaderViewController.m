@@ -33,6 +33,8 @@
     DYMBookPageStyle        *_pageStyle;
     
     DYMBookDataSource       *_dateSource;
+    
+    DYMPageTapHandler       _pageTapHandler;
 }
 
 @end
@@ -69,7 +71,7 @@
                                                       , self.view.frame.size.height - (_pageEdgeInset.top + _pageEdgeInset.bottom));
     
     
-    // Page view controller
+    // Creating page view controller
     _pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     _pageVC.dataSource = self;
     _pageVC.delegate = self;
@@ -80,6 +82,20 @@
         make.edges.equalTo(self.view);
     }];
     [_pageVC didMoveToParentViewController:self];
+    
+    
+    /// page tap handler
+    __weak typeof(self) weakSelf = self;
+    _pageTapHandler = ^void(EDYMBookPageArea pageArea, DYMBookPageVC *page) {
+        __strong typeof(self) strongSelf = weakSelf;
+        if (pageArea == kDYMBookPageAreaMiddle) {
+            NSLog(@"show/hide toobar...");
+        } else if (pageArea == kDYMBookPageAreaLeft) {
+            NSLog(@"go previous...");
+        } else if (pageArea == kDYMBookPageAreaRight) {
+            NSLog(@"go next...");
+        }
+    };
     
     // Load the book
     if (_plistFileName) {
@@ -92,6 +108,8 @@
             // first page
             DYMBookPageVC *pageVC = [[strongSelf->_dateSource currentChapter] firstPage];
             if (pageVC) {
+                pageVC.pageTapHandler = _pageTapHandler;
+                pageVC.transitionStyle = self->_pageVC.transitionStyle;
                 [_pageVC setViewControllers:@[pageVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
             }
             
@@ -128,8 +146,11 @@
 
 -(DYMBookPageVC *)pageVC:(BOOL)forward {
     
-    return [_dateSource getPage:forward];
-
+    DYMBookPageVC *pageVC = [_dateSource getPage:forward];
+    pageVC.pageTapHandler = _pageTapHandler;
+    pageVC.transitionStyle = _pageVC.transitionStyle;
+    
+    return pageVC;
 }
 
 #pragma mark - UIPageViewControllerDelegate
